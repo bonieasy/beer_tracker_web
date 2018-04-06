@@ -6,7 +6,7 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
     <title>GND | Cervejaria</title>
 
@@ -19,42 +19,43 @@
     <link href="/css/elegant-icons-style.css" rel="stylesheet" />
     <link href="/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom styles -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet" />
-
+    <link href="/css/signin.css" rel="stylesheet"/>
 
 </head>
 
-<body class="login-img3-body">
 
+<body class="text-center">
 
-    <div class="container">
+    <form class="form-signin">
+      <img class="mb-4" src="http://mysafetywill.com/SafetyWill4Survey/image/security2.png" alt="" width="100" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Informações de login</h1>
 
-        <form class="login-form">
-            <!-- caixa de login -->
-            <div class="login-wrap">
-                <!-- Alinha os itens da caixa de login -->
-                <p class="login-img"><i class="icon_lock_alt"></i></p> <!-- icone de cadeado -->
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="icon_profile"></i></span>
-                    <input type="text" class="form-control" placeholder="Usuário" name="userid" autofocus>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                    <input type="password" class="form-control" placeholder="Senha" name="pswrd">
-                </div>
-                <label class="checkbox">
-                    <!-- inicio da checkbox -->
-                    <input type="checkbox" value="remember-me"> Lembrar de mim
-                    <span class="pull-right"> <a href="#"> Esqueci minha senha</a></span>
-                </label> <!-- fim da checkbox -->
-                <button class="btn btn-primary btn-lg btn-block" type="button" onclick="check(this.form)">Entrar</button> <!-- Botão para acessar -->
-            </div>
-        </form>
+      <!-- Inserindo o usuário -->
+      <label for="inputUsuario" class="sr-only">Usuário</label>
+      <input type="usuario" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
 
+      <!-- Inserindo a senha do usuário -->
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <div class="checkbox mb-3">
 
-    </div>
+        <!-- Opções lembrar-me e esqueci a senha -->
+        <label>
+          <input type="checkbox" value="Lembrar-me"><span class="pull-left">Lembrar-me</span>
+          <span class="pull-right"> <a href="#"> Esqueci minha senha</a></span>
+        </label>
+      </div>
 
+        <div class="btn-group btn-group-justified">
+            <!-- Botão para acessar -->
+            <a href="#" class="btn btn-info btn-lg btn-block">Entrar</a>
+            <!-- Botão para acessar -->
+            <a href="#" class="btn btn-info btn-lg btn-block active">Registrar</a> 
+        </div>
+      
+      <label><p><p class="mt-5 mb-3 text-muted">&copy; GND Systems 2018</p></label></p>
 
+    </form>
 </body>
+
 </html>
