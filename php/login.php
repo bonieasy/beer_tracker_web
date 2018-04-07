@@ -48,9 +48,7 @@
 
         <div class="btn-group btn-group-justified">
             <!-- Botão para acessar -->
-            <a href="#" class="btn btn-info btn-lg btn-block">Entrar</a>
-            <!-- Botão para acessar -->
-            <a href="#" class="btn btn-info btn-lg btn-block active">Registrar</a> 
+            <a href="#" class="btn btn-info btn-lg btn-block">Entrar</a> 
         </div>
       
       <label><p><p class="mt-5 mb-3 text-muted">&copy; GND Systems 2018</p></label></p>
