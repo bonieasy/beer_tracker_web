@@ -26,7 +26,7 @@
 
 <body class="text-center">
 
-    <form class="form-signin">
+    <form class="form-signin" action="get-login.php" method="post">
       <img class="mb-4" src="http://mysafetywill.com/SafetyWill4Survey/image/security2.png" alt="" width="100" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Informações de login</h1>
 
