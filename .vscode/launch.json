@@ -8,16 +8,15 @@
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            "program": "${workspaceRoot}/php/index.php",
             "port": 8080
         },
         {
             "name": "Launch currently open script",
             "type": "php",
             "request": "launch",
-            "program": "${file}/php/index.php",
+            "program": "${file}",
             "cwd": "${fileDirname}",
-            "port": 9000
+            "port": 8080
         }
     ]
 }

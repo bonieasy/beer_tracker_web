@@ -1,0 +1,38 @@
+INSERT INTO usuario( VALUES (1, 'Bruno Amadio de Araujo', 'bruno', 'bruno@gnd.com');
+SELECT * FROM usuario;
+
+
+INSERT INTO cliente( VALUES (1, 'Bar do Osmar', '9029102930', '13320000', 'Rua fatec', 'Indaiatuba', 'SP', 'Brasil', '1990909090', 'osmar@bar.com');
+SELECT * FROM cliente;
+
+
+INSERT INTO pedido( VALUES (1, '2018-04-06', '2018-06-06', 1);
+SELECT * FROM pedido;
+
+
+INSERT INTO receita( VALUES (1, 'Pale Ale', 'Cerveja Pale Ale', '500', '300', '200', '100', '01:30:00', '23:00:00', '00:40:00', '00:00:50' ,'00:00:10');
+SELECT * FROM receita;
+
+
+INSERT INTO produto( VALUES (1, '600', 'Cerveja Pale Ale', '1');
+SELECT * FROM produto;
+
+
+INSERT INTO item_pedido( VALUES (1, 1, '10', 50);
+SELECT * FROM item_pedido;
+
+
+INSERT INTO lote( VALUES (1, '2018-04-10', '2018-04-20', '2018-04-21', '2018-04-22', '300', '400', '300', '200', 1);
+SELECT * FROM lote;
+
+
+INSERT INTO ingrediente( VALUES (1, 'Cevada', 'Ingrediente base da maioria das receitas');
+SELECT * FROM ingrediente;
+
+
+INSERT INTO ingrediente_receita( VALUES (1, 1, 1, '20');
+SELECT * FROM ingrediente_receita;
+
+
+INSERT INTO fornecedor( VALUES (1, 'Agrar SA', '98982189237', 'rua Alemanha', 'Salto', 'SP', 'Brasil', '1146029000', 'vendas@agrar.com');
+SELECT * FROM fornecedor;
