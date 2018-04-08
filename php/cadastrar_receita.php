@@ -1,47 +1,49 @@
 <?php
+
+require_once('init.php');
+
 //$conexao = mysql_connect ("localhost", "root", "bancoGND");
 //mysql_select_db ("gnd_cervejaria", $conexao);
 
-if ($_SERVER ['REQUEST_METHOD'] == 'POST')
+if (isset($_POST["submit"]))
 
 {
 
     $nome_receita = $_POST ["nome_receita"];
-    $dry_hopping = $_POST ["dry_hopping"];
-    $comentario_receita = $_POST ["comentario_receita"];
-    $malte = $_POST ["ingred1"];
-    $lupulo = $_POST ["ingred2"];
-    $levedura = $_POST ["ingred3"];
-    $og = $_POST ["OG"];
-    $fg = $_POST ["FG"];
-    $ibu = $_POST ["IBU"];
-    $abv = $_POST ["ABV"];
-    $brassagem = $_POST ["brassagem"];
-    $fervura = $_POST ["fervura"];
-    $fermentacao = $_POST ["fermentacao"];
-    $rampa = $_POST ["rampa"];
-    $variacao_rampa = $_POST ["variacao"];
-    $tempo_rampa =$_POST ["temperatura"];
+    $descricao_receita = $_POST ["comentario_receita"];
+    $indice_og = $_POST ["OG"];
+    $indice_fg = $_POST ["FG"];
+    $indice_ibu = $_POST ["IBU"];
+    $indice_abv = $_POST ["ABV"];
+    $tempo_brasagem = $_POST ["brassagem"];
+    $tempo_fervura = $_POST ["fervura"];
+    $tempo_fermentacao = $_POST ["fermentacao"];
+    $tempo_repouso = $_POST ["rampa"];
+    $tempo_variacao = $_POST ["variacao"];
 
-    if ($_POST ["nome_receita"] == null && $dry_hopping = $_POST ["dry_hopping"] == null)
-    {
-        echo "preencher todos os itens";
-    }
+        $PDO = db_connect();
 
-    else
-    {
+        $sql = "INSERT INTO receita
+        (nome_receita,
+        descricao_receita,
+        indice_og,
+        indice_fg,
+        indice_ibu,
+        indice_abv,
+        tempo_brasagem,
+        tempo_fervura,
+        tempo_fermentacao,
+        tempo_repouso,
+        tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";   
 
-        $sql = "INSERT INTO cadastro_receita (nome_receita, dry_hopping, comentario_receita, malte, lupulo, levedura, og, fg, ibu, abv, brassagem, fervura, fermentacao, rampa, variacao_rampa, tempo_rampa) VALUES ('$nome_receita', '$dry_hopping', '$comentario_receita', '$malte','$lupulo', '$levedura', '$OG', '$FG', '$IBU', '$ABV', '$brassagem','$fervura', '$rampa', '$variacao', '$temperatura')";
+        $stmt = $PDO->prepare($sql);
 
-        if (!$result) {
-            //Irá apresentar qual o erro ocorreu ao executar a query
-            die("Erro: " . mysqli_error());
-        }
-        else{
-
-            echo "Receita cadastrada";
-        }
-    }
+        ($stmt->execute());         
+        
+        echo "Receita cadastrada";    
 
 }
+else {
+    die("<br />Nao foi possivel inserir registro: " . mysql_error());
+  }
 ?>

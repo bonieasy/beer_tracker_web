@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once('init.php');?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,17 +7,17 @@
     <meta content="Creative - Bootstrap 3 Responsive Admin Template" name="description">
     <meta content="GeeksLabs" name="author">
     <meta content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" name="keyword">
-    <link href="/img/favicon.png" rel="shortcut icon">
+    <link href="../img/favicon.png" rel="shortcut icon">
     <title>GND Systems</title><!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
-    <link href="/css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
+    <link href="../css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
     <!-- font icon -->
-    <link href="/css/elegant-icons-style.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
+    <link href="../css/elegant-icons-style.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
     <!-- color picker -->
     <!-- Custom styles -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 
 </head>
 <body>
@@ -127,19 +128,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Coment�rios</label>
+                                        <label class="col-sm-2 control-label">Comentários</label>
                                         <div class="col-sm-10">
                                             <input class="form-control round-input" type="text" name="comentario_receita">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
-                                    </div>
-                                </div>
-
-                                </FORM>
                         </section>
                     </div>
                 </div><!-- Titulo do painel de ingredientes -->
@@ -312,7 +306,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
                     </div>
                 </div>
                 
@@ -322,6 +316,8 @@
                     <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
                 </div>
             </div>
+
+            </form>
         </section><!-- container section end -->
 
         <script src="/assets/ckeditor/ckeditor.js" type="text/javascript">
