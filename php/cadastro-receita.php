@@ -120,26 +120,14 @@
                                             <input class="form-control" type="text" name="nome_receita">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Dry Hopping</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="dry_hopping"> <span class="help-block">Caso essa t�cnica seja aplicado na receita</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Coment�rios</label>
+                                        <label class="col-sm-2 control-label">Descrição</label>
                                         <div class="col-sm-10">
                                             <input class="form-control round-input" type="text" name="comentario_receita">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
-                                    </div>
-                                </div>
-
-                                </FORM>
                         </section>
                     </div>
                 </div><!-- Titulo do painel de ingredientes -->
@@ -209,7 +197,7 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Ind�ces
+                                Indíces
                             </header>
                             <div class="panel-body">
                                 <table>
