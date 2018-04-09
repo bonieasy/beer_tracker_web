@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once('init.php');?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,17 +7,17 @@
     <meta content="Creative - Bootstrap 3 Responsive Admin Template" name="description">
     <meta content="GeeksLabs" name="author">
     <meta content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" name="keyword">
-    <link href="/img/favicon.png" rel="shortcut icon">
+    <link href="../img/favicon.png" rel="shortcut icon">
     <title>GND Systems</title><!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
-    <link href="/css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
+    <link href="../css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
     <!-- font icon -->
-    <link href="/css/elegant-icons-style.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
+    <link href="../css/elegant-icons-style.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
     <!-- color picker -->
     <!-- Custom styles -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 
 </head>
 <body>
@@ -37,7 +38,7 @@
 
                     <!-- user login dropdown start-->
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="/img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonifácio</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu extended logout">
                             <li style="list-style: none; display: inline">
                                 <div class="log-arrow-up"></div>
@@ -251,7 +252,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Fermenta��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Fermentação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -280,7 +281,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Varia��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Variação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -300,19 +301,21 @@
 
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
                     </div>
                 </div>
                 
             </section><!--main content end-->
+            
             <div class="text-center">
                 <div class="credits">
                     <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
                 </div>
             </div>
+            </form>
         </section><!-- container section end -->
 
-        <script src="/assets/ckeditor/ckeditor.js" type="text/javascript">
+        <script src="../assets/ckeditor/ckeditor.js" type="text/javascript">
         </script> <!-- custom form component script for this page-->
 
     </section>

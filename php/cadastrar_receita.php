@@ -36,14 +36,19 @@ if (isset($_POST["submit"]))
         tempo_repouso,
         tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";   
 
+
         $stmt = $PDO->prepare($sql);
 
-        ($stmt->execute());         
+       if ($stmt->execute()){         
         
         echo "Receita cadastrada";    
 
+       }
+
+       else
+        {
+           print_r($stmt->errorInfo());
+       }
 }
-else {
-    die("<br />Nao foi possivel inserir registro: " . mysql_error());
-  }
+
 ?>

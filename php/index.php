@@ -38,7 +38,7 @@
 
                     <!-- user login dropdown start-->
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="/img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu extended logout">
                             <li style="list-style: none; display: inline">
                                 <div class="log-arrow-up"></div>
@@ -121,14 +121,9 @@
                                             <input class="form-control" type="text" name="nome_receita">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Dry Hopping</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="dry_hopping"> <span class="help-block">Caso essa t�cnica seja aplicado na receita</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Comentários</label>
+                                        <label class="col-sm-2 control-label">Descrição</label>
                                         <div class="col-sm-10">
                                             <input class="form-control round-input" type="text" name="comentario_receita">
                                         </div>
