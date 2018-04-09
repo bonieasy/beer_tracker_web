@@ -38,7 +38,7 @@
 
                     <!-- user login dropdown start-->
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonifácio</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu extended logout">
                             <li style="list-style: none; display: inline">
                                 <div class="log-arrow-up"></div>
@@ -61,13 +61,13 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="index.php"><i class="icon_house_alt"></i> <span>Home</span></a>
+                        <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
                     </li><!-- Menu e sub menu que abre ao clicar -->
                     <li class="sub-menu">
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
                         <ul class="sub">
                             <li>
-                                <a class="" href="cadastrar_receita.php">Nova Receita</a>
+                                <a class="" href="new-recipe.html">Nova Receita</a>
                             </li><!-- Chama a tela de nova receita -->
                             <li>
                                 <a class="" href="view-recipe.html">Visualizar</a>
@@ -82,16 +82,10 @@
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-list-ul"></i> <span>Pedidos</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="ingredientes.php"><i class="fa fa-list-ul"></i> <span>Ingredientes</span></a>
-                    </li>
-                    <li class="menu">
                         <a class="" href="javascript:;"><i class="icon_table"></i> <span>Lotes</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relatórios</span></a>
-                    </li>
-                    <li class="menu">
-                        <a class="" href="login_adm.php"><i class="fa fa-user"></i> <span>Gerenciamento</span></a>
+                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relat�rios</span></a>
                     </li>
                 </ul><!-- sidebar menu end-->
             </div>
@@ -204,7 +198,7 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Ind�ces
+                                Indíces
                             </header>
                             <div class="panel-body">
                                 <table>
@@ -258,7 +252,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Fermenta��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Fermentação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -287,7 +281,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Varia��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Variação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -312,16 +306,16 @@
                 </div>
                 
             </section><!--main content end-->
+            
             <div class="text-center">
                 <div class="credits">
                     <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
                 </div>
             </div>
-
             </form>
         </section><!-- container section end -->
 
-        <script src="/assets/ckeditor/ckeditor.js" type="text/javascript">
+        <script src="../assets/ckeditor/ckeditor.js" type="text/javascript">
         </script> <!-- custom form component script for this page-->
 
     </section>
