@@ -4872,7 +4872,7 @@ body.modal-open,
   width: auto;
   padding: 10px;
   z-index: 1050;
-}
+} 
 .modal-content {
   position: relative;
   background-color: #ffffff;

@@ -1,0 +1,88 @@
+CREATE DATABASE cervejaria;
+
+USE cervejaria;
+
+CREATE TABLE usuario(
+    cod_usuario int AUTO_INCREMENT PRIMARY KEY,
+    nome_usuario VARCHAR(50) NOT NULL,
+    login_usuario VARCHAR(20) NOT NULL,
+    email_usuario VARCHAR(50) NOT NULL);
+    
+CREATE TABLE cliente(
+    cod_cliente int AUTO_INCREMENT PRIMARY KEY,
+    razao_social VARCHAR(50) NOT NULL,
+    cnpj VARCHAR(20) NOT NULL, 
+    cep VARCHAR(10) NOT NULL, 
+    endereco VARCHAR(50) NOT NULL,
+    cidade VARCHAR(50) NOT NULL, 
+    estado VARCHAR(10) NOT NULL, 
+    pais VARCHAR(20) NOT NULL, 
+    telefone VARCHAR(20),
+    email_cliente VARCHAR(50));
+    
+CREATE TABLE pedido(
+    cod_pedido int AUTO_INCREMENT PRIMARY KEY,
+    data_pedido DATE NOT NULL, 
+    data_entrega DATE NOT NULL, 
+    cod_cliente INT NOT NULL REFERENCES cliente (cod_cliente));
+	
+CREATE TABLE receita(
+    cod_receita int AUTO_INCREMENT PRIMARY KEY,
+    nome_receita VARCHAR(50) NOT NULL,
+    descricao_receita VARCHAR(100),
+    indice_og VARCHAR(20),
+    indice_abv VARCHAR(20),
+    indice_ibu VARCHAR(20),
+    indice_fg VARCHAR(20),
+    tempo_fervura TIME NOT NULL,
+    tempo_fermentacao TIME NOT NULL, 
+    tempo_brasagem TIME NOT NULL, 
+    tempo_variacao TIME NOT NULL, 
+    tempo_repouso TIME NOT NULL);
+    
+CREATE TABLE produto(
+    cod_produto int AUTO_INCREMENT PRIMARY KEY, 
+    ml VARCHAR(20),
+    nome_produto VARCHAR(20),
+    cod_receita INT NOT NULL REFERENCES receita (cod_receita));
+
+CREATE TABLE item_pedido(
+    cod_pedido INT NOT NULL REFERENCES pedido(cod_pedido),
+    cod_produto INT NOT NULL REFERENCES produto(cod_produto),
+    preco_item decimal(15,2) NOT NULL, 
+    quantidade INT NOT NULL);
+    
+CREATE TABLE lote(
+    cod_lote int AUTO_INCREMENT PRIMARY KEY,
+    data_inicio DATE NOT NULL, 
+    data_envase DATE NOT NULL, 
+    data_fermentacao DATE NOT NULL, 
+    data_fim DATE NOT NULL, 
+    indice_og VARCHAR(20) NOT NULL,
+    indice_abv VARCHAR(20) NOT NULL,
+    indice_ibu VARCHAR(20) NOT NULL,
+    indice_fg VARCHAR(20) NOT NULL,
+    cod_produto INT NOT NULL REFERENCES produto(cod_produto));
+    
+CREATE TABLE ingrediente(
+    cod_ingrediente int AUTO_INCREMENT PRIMARY KEY, 
+    nome_ingrediente VARCHAR(20) NOT NULL,
+    descricao_ingrediente VARCHAR(50));
+    
+CREATE TABLE ingrediente_receita(
+    cod_ingrediente INT NOT NULL REFERENCES ingrediente(cod_ingrediente),
+    cod_receita INT NOT NULL REFERENCES receita(cod_receita),
+    quantidade INT NOT NULL, 
+    preco_ingrediente decimal(15,2) NOT NULL);
+    
+CREATE TABLE fornecedor(
+    cod_fornecedor int AUTO_INCREMENT PRIMARY KEY, 
+    razao_social_fornecedor VARCHAR(20),
+    cnpj_fornecedor VARCHAR(20),
+    cep_fornecedor VARCHAR(20),	
+    endereco_fornecedor VARCHAR(20),
+    cidade_fornecedor VARCHAR(50),
+    estado_fornecedor VARCHAR(10),
+    pais_fornecedor VARCHAR(20),
+    telefone_fornecedor VARCHAR(20), 
+    email_fornecedor VARCHAR(50));
