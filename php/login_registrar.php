@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php require_once('init.php');?>
+
 <html lang="en">
 <head>
         <meta charset="utf-8">
@@ -26,7 +28,7 @@
 
 <body>
 
-    <form class="form-register">
+    <form class="form-register" method="POST" action="login-registrar-insert.php">
         
         <div class="form-group">
             <h1 class="h2 mb-3 font-weight-normal">Cadastro de Usuários</h1>
@@ -35,34 +37,29 @@
         <!-- Imput do nome completo -->
         <div class="form-group">
             <label for="nome">Nome completo</label>
-            <input type="Nome" class="form-control" id="nome-completo" placeholder="Insira o seu nome completo">
+            <input type="text" name="nome" class="form-control" id="nome" placeholder="Insira o seu nome completo" required autofocus>
         </div>
 
         <!-- Imput do nome de usuário -->
         <div class="form-group">
             <label for="username">Nome de Usuário</label>
-            <input type="Usuario" class="form-control" id="ImputUsuario" placeholder="Insira o seu nome de usuário">
+            <input type="text" name="login" class="form-control" id="login" placeholder="Insira o seu nome de usuário" required>
         </div>
 
         <!-- Imput do email de cadastro -->
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+            <input type="email" name="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
         </div>
 
         <!-- Imput da senha -->
         <div class="form-group">
             <label for="senha">Senha</label>
-            <input type="password" class="form-control" id="ImputPassword" placeholder="Senha">
+            <input type="password" name="senha" class="form-control" id="senha" placeholder="Senha" required>
         </div>
 
-        <!-- Método de agrupamento dos botões -->
-        <div class="btn-group btn-group-justified">
             <!-- Botão para registrar -->
-            <a href="#" class="btn btn-info btn-lg btn-block">Registrar</a>
-            <!-- Botão para cancelar -->
-            <a href="/php/login.php" class="btn btn-danger btn-lg btn-block">Cancelar</a> 
-        </div>
+            <input type="submit" class="btn btn-info btn-lg btn-block" value="Registrar" id="cadastrar" name="cadastrar">
     </form>
         
 </body>
