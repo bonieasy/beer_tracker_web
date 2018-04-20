@@ -2,9 +2,6 @@
 
 require_once('init.php');
 
-//$conexao = mysql_connect ("localhost", "root", "bancoGND");
-//mysql_select_db ("gnd_cervejaria", $conexao);
-
 if (isset($_POST["submit"]))
 
 {
@@ -20,6 +17,7 @@ if (isset($_POST["submit"]))
     $tempo_fermentacao = $_POST ["fermentacao"];
     $tempo_repouso = $_POST ["rampa"];
     $tempo_variacao = $_POST ["variacao"];
+    
 
         $PDO = db_connect();
 
@@ -34,10 +32,7 @@ if (isset($_POST["submit"]))
         tempo_fervura,
         tempo_fermentacao,
         tempo_repouso,
-        tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";   
-
-
-        $stmt = $PDO->prepare($sql);
+        tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";           $stmt = $PDO->prepare($sql);
 
        if ($stmt->execute()){         
         
