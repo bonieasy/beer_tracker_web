@@ -116,7 +116,7 @@
                             <!--Fim titulo painel -->
 
                             <!-- Conteúdo do painel -->
-                            <form action="cadastrar_receita.php" method="POST">
+                            <form action="receita-function.php" method="POST">
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome da receita</label>
@@ -258,7 +258,7 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Tempos
+                                Duração
                             </header>
                             <div class="panel-body">
                                 <div class="form-group">
