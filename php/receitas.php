@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php require_once('init.php');?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -166,13 +169,26 @@
 					</ol>
 				</div>
 			</div>
-              <!-- Form validations -->              
+              <!-- Form validations --> 
+
+              <!--Consulta MySQL para popular tabela com receitas cadastradas-->             
               
+              <?php  
+                        $PDO = db_connect(); 
+
+                        $sql = "SELECT * FROM receita";
+                
+                        $stmt = $PDO->prepare($sql);
+                        $stmt->execute();
+                        $info = $stmt->fetchAll();
+                ?>
+            <!--Fim consulta MySQL-->
+
 			  <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Clientes Cadastrados
+                              Receitas de cervejas
                           </header>
                           <div class="table-responsive">
                             <table class="table">
@@ -180,61 +196,25 @@
                                 <tr>
                                   <th>ID</th>
                                   <th>Nome</th>
-                                  <th>CPF/CNPJ</th>
-                                  <th>E-mail</th>
-                                  <th>Telefone</th>
-                                  <th>Endereço</th>
-                                  <th>CEP</th>
-								  <th>Cidade</th>
-								  <th>Número</th>
+                                  <th>Original Gravity</th>
+                                  <th>Final Gravity</th>
+                                  <th>International Bitter Units</th>
+                                  <th>Alcohol by Volume</th>
                                 </tr>
                               </thead>
+                <?php foreach($info as $row): ?>                     
+                           
                               <tbody>
                                 <tr>
-                                  <td>1</td>
-                                  <td>Fritz</td>
-                                  <td>12839000169</td>
-                                  <td>FritzIndaiatuba@fritz.com.br</td>
-                                  <td>32122445</td>
-                                  <td>Reg. Feijó</td>
-                                  <td>13190000</td>
-								  <td>Indaiatuba</td>
-								  <td>345</td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Fritz</td>
-                                  <td>12839000169</td>
-                                  <td>FritzIndaiatuba@fritz.com.br</td>
-                                  <td>32122445</td>
-                                  <td>Reg. Feijó</td>
-                                  <td>13190000</td>
-								  <td>Indaiatuba</td>
-								  <td>345</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Fritz</td>
-                                  <td>12839000169</td>
-                                  <td>FritzIndaiatuba@fritz.com.br</td>
-                                  <td>32122445</td>
-                                  <td>Reg. Feijó</td>
-                                  <td>13190000</td>
-								  <td>Indaiatuba</td>
-								  <td>345</td>
-                                </tr>
-								  <tr>
-                                  <td>4</td>
-                                  <td>Fritz</td>
-                                  <td>12839000169</td>
-                                  <td>FritzIndaiatuba@fritz.com.br</td>
-                                  <td>32122445</td>
-                                  <td>Reg. Feijó</td>
-                                  <td>13190000</td>
-								  <td>Indaiatuba</td>
-								  <td>345</td>
-                                </tr>
+                                  <td><?=$row["cod_receita"]?></td>
+                                  <td><?=$row["nome_receita"]?></td>
+                                  <td><?=$row["indice_og"]?></td>
+                                  <td><?=$row["indice_fg"]?></td>
+                                  <td><?=$row["indice_ibu"]?></td>
+                                  <td><?=$row["indice_abv"]?></td>
+                                </tr>                               
                               </tbody>
+                <?php endforeach; ?>
                             </table>
                           </div>
 
