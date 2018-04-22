@@ -49,7 +49,7 @@
                             </li>
 
                             <li>
-                                <a href="login.html"><i class="fa-sign-out"></i> Sair</a>
+                                <a href="login.php"><i class="fa-sign-out"></i> Sair</a>
                             </li>
                         </ul>
                     </li><!-- user login dropdown end -->
