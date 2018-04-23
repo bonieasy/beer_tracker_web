@@ -206,7 +206,7 @@
                                 <br>
                 <!--dropdown inicio ingrediente 3-->
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Ingrediente</label>
+                    <label class="col-sm-2 control-label">Ingrediente 03</label>
                     <div class="col-sm-7">
                         <select class="form-control" id="ingred3" name="ingred3">                       
                 <!-- Lista ingrediente cadastrados - Banco -->
