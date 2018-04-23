@@ -154,15 +154,15 @@
                             <div class="panel-body">
                                 <!--dropdown inicio ingrediente 1-->
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Ingrediente</label>
-                                    <div class="col-sm-10">
+                                    <label class="col-sm-2 control-label">Ingrediente 01</label>
+                                    <div class="col-sm-7">
                                         <select class="form-control" id="ingred1" name="ingred1">
                                         
                     <!--Consulta MySQL para popular dropdown-->
                         <?php  
                         $PDO = db_connect(); 
 
-                           $sql = "SELECT nome_ingrediente FROM ingrediente";
+                           $sql = "SELECT * FROM ingrediente";
                     
                            $stmt = $PDO->prepare($sql);
                            $stmt->execute();
@@ -173,16 +173,22 @@
                         <?php foreach($info as $ingred): ?>
                                         <option><?=$ingred["nome_ingrediente"]?></option>
                                             <?php endforeach; ?>  
-                                        </select>
+                                        </select>                                        
                                     </div>
+
+                                    <div class="input-group col-sm-3">
+                                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                                    </div>   
                                 </div>
+
+                                
                                <!-- dropdow fim -->
                                <br>
                                <br>
                 <!--dropdown inicio ingrediente 2-->
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Ingrediente</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-7">
                         <select class="form-control" id="ingred2" name="ingred2">                       
                 <!-- Lista ingrediente cadastrados - Banco -->
                         <?php foreach($info as $ingred): ?>
@@ -190,6 +196,10 @@
                         <?php endforeach; ?>  
                         </select>
                     </div>
+
+                    <div class="input-group col-sm-3">
+                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                    </div> 
                 </div>
                 <!-- dropdow fim -->
                                 <br>
@@ -197,7 +207,7 @@
                 <!--dropdown inicio ingrediente 3-->
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Ingrediente</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-7">
                         <select class="form-control" id="ingred3" name="ingred3">                       
                 <!-- Lista ingrediente cadastrados - Banco -->
                         <?php foreach($info as $ingred): ?>
@@ -205,6 +215,9 @@
                         <?php endforeach; ?>  
                         </select>
                     </div>
+                    <div class="input-group col-sm-3">
+                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                    </div> 
                 </div>
                 <!-- dropdow fim -->
 
