@@ -61,13 +61,13 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
+                        <a class="" href="index.php"><i class="icon_house_alt"></i> <span>Home</span></a>
                     </li><!-- Menu e sub menu que abre ao clicar -->
                     <li class="sub-menu">
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
                         <ul class="sub">
                             <li>
-                                <a class="" href="new-recipe.html">Nova Receita</a>
+                                <a class="" href="cadastrar_receita.php">Nova Receita</a>
                             </li><!-- Chama a tela de nova receita -->
                             <li>
                                 <a class="" href="view-recipe.html">Visualizar</a>
@@ -82,10 +82,16 @@
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-list-ul"></i> <span>Pedidos</span></a>
                     </li>
                     <li class="menu">
+                        <a class="" href="ingredientes.php"><i class="fa fa-list-ul"></i> <span>Ingredientes</span></a>
+                    </li>
+                    <li class="menu">
                         <a class="" href="javascript:;"><i class="icon_table"></i> <span>Lotes</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relat�rios</span></a>
+                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relatórios</span></a>
+                    </li>
+                    <li class="menu">
+                        <a class="" href="login_adm.php"><i class="fa fa-user"></i> <span>Gerenciamento</span></a>
                     </li>
                 </ul><!-- sidebar menu end-->
             </div>
