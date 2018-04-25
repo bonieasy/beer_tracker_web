@@ -31,7 +31,7 @@ cc
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="ingredientes-function.php" method="post">
+			<form class="contact100-form validate-form" action="ingredientes-insert.php" method="post">
 				<span class="contact100-form-title">
 					Cadastro de Ingrediente
 				</span>
@@ -62,10 +62,97 @@ cc
 				</div>
 			</form>
 		</div>
+
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Codigo</th>
+								<th class="column2">Ingrediente</th>
+								<th class="column3">Descricao</th>
+								<th class="column0"></th>
+								<th class="column0"></th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+							$PDO = db_connect();
+							$ingredientes = $PDO->query('SELECT cod_ingrediente, nome_ingrediente, descricao_ingrediente From ingrediente');
+							if (is_array($ingredientes) || is_object($ingredientes))
+							{
+								foreach($ingredientes as $ingrediente) {
+									echo ('	<tr id="tr-click">
+												<td class="column1" id="codIngrediente">'. $ingrediente["cod_ingrediente"] .'</td>
+												<td class="column2">'. $ingrediente["nome_ingrediente"] .'</td>
+												<td class="column3">'. $ingrediente["descricao_ingrediente"] .'</td>
+												<td class="column0">
+													<button type="button" class="btn" data-toggle="modal" data-target="#modalEdit" data-whatever="'. $ingrediente["nome_ingrediente"]. '">
+														<img class="img-btn" src="/img/edit.svg" alt="Edit" height="20" width="20">
+													</button>
+												</td>
+												<td class="column0">
+													<button type="button" class="btn" data-toggle="modal" data-target="#modalDelete" data-whatever="'. $ingrediente["nome_ingrediente"]. '">
+														<img class="img-btn" src="/img/rubbish-bin.svg" alt="Delete" height="20" width="20">
+													</button>
+												</td>
+											</tr>');
+								}
+							}
+						?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="contact100-form-title-modal" id="modalEditTitle"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+				<div class="form-group">
+					<label for="recipient-name" class="col-form-label">Nome:</label>
+					<input type="text" class="form-control" id="recipient-name">
+				</div>
+				<div class="form-group">
+					<label for="message-text" class="col-form-label">Descricao:</label>
+					<textarea class="form-control" id="message-text"></textarea>
+				</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				<button type="button" class="btn btn-primary">Atualizar</button>
+			</div>
+			</div>
+		</div>
 	</div>
 
-
-
+	<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalEditTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="contact100-form-title-modal" id="modalEditTitle"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id="btn-delete" data-target="#btn-delete">Deletar</button>
+			</div>
+			</div>
+		</div>
+	</div>
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
@@ -89,7 +176,8 @@ cc
 <!--===============================================================================================-->
 	<script src="/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="/js/main.js"></script>
+	<script src="/javascript/main.js"></script>
+	<script src="/javascript/modal.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
