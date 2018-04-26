@@ -83,12 +83,12 @@
 							if (is_array($ingredientes) || is_object($ingredientes))
 							{
 								foreach($ingredientes as $ingrediente) {
-									echo ('	<tr id="tr-click">
+									echo ('	<tr>
 												<td class="column1" id="codIngrediente">'. $ingrediente["cod_ingrediente"] .'</td>
 												<td class="column2">'. $ingrediente["nome_ingrediente"] .'</td>
 												<td class="column3">'. $ingrediente["descricao_ingrediente"] .'</td>
 												<td class="column0">
-													<button type="button" class="btn" data-toggle="modal" data-target="#modalEdit" data-whatever="'. $ingrediente["nome_ingrediente"]. '">
+													<button type="button" class="btn" data-toggle="modal" data-target="#modalEdit" data-whatever="'. $ingrediente["nome_ingrediente"]. ' / '. $ingrediente["cod_ingrediente"] .'">
 														<img class="img-btn" src="/img/edit.svg" alt="Edit" height="20" width="20">
 													</button>
 												</td>
@@ -118,14 +118,15 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form>				
+				<input type="hidden" id="codIngrediente">
 				<div class="form-group">
 					<label for="recipient-name" class="col-form-label">Nome:</label>
-					<input type="text" class="form-control" id="recipient-name">
+					<input type="text" class="form-control" id="nomeIngrediente">
 				</div>
 				<div class="form-group">
 					<label for="message-text" class="col-form-label">Descricao:</label>
-					<textarea class="form-control" id="message-text"></textarea>
+					<textarea class="form-control" id="descricaoIngrediente"></textarea>
 				</div>
 				</form>
 			</div>
@@ -147,30 +148,21 @@
 				</button>
 			</div>
 			<div class="modal-footer">
+				<input type="text" class="text-hidden">
+			
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 				<button type="button" class="btn btn-primary" id="btn-delete" data-target="#btn-delete">Deletar</button>
 			</div>
 			</div>
 		</div>
 	</div>
-	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
 	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
 	<script src="/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
 	<script src="/vendor/bootstrap/js/popper.js"></script>
 	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
 	<script src="/vendor/select2/select2.min.js"></script>
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--===============================================================================================-->
 	<script src="/vendor/daterangepicker/moment.min.js"></script>
 	<script src="/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
