@@ -62,19 +62,21 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
-                    </li><!-- Menu e sub menu que abre ao clicar -->
-                    <li class="sub-menu">
-                        <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
-                        <ul class="sub">
+                        <a class="" href="receitas.php"><i class="icon_house_alt"></i> <span>Home</span></a>
+                    </li>
+                    <!-- Menu e sub menu que abre ao clicar -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
+                        <ul class="dropdown-menu">
                             <li>
-                                <a class="" href="new-recipe.html">Nova Receita</a>
+                                <a href="cadastro-receita.php">Nova Receita</a>
                             </li><!-- Chama a tela de nova receita -->
                             <li>
-                                <a class="" href="view-recipe.html">Visualizar</a>
+                                <a class="" href="receitas.php">Visualizar</a>
                             </li>
                         </ul>
-                    </li><!-- Menu e sub menu que abre ao clicar -->
+                    </li>
+                    <!-- FIM Menu e sub menu que abre ao clicar -->
                     <li class="menu">
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-users"></i> <span>Clientes</span></a>
                     </li>
@@ -86,7 +88,7 @@
                         <a class="" href="javascript:;"><i class="icon_table"></i> <span>Lotes</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relat�rios</span></a>
+                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relatórios</span></a>
                     </li>
                 </ul><!-- sidebar menu end-->
             </div>
@@ -99,7 +101,7 @@
                         <h3 class="page-header"><i class="fa fa-file-text-o"></i> Nova Receita</h3>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-home"></i><a href="home.html">Home</a>
+                                <i class="fa fa-home"></i><a href="home.php">Home</a>
                             </li>
                             <li><i class="icon_document_alt"></i>Receita</li>
                             <li><i class="fa fa-file-text-o"></i>Nova Receita</li>

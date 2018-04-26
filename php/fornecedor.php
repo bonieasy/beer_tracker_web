@@ -161,22 +161,21 @@
           <section class="wrapper">
 		  <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-files-o"></i> Receitas Cadastradas</h3>
+					<h3 class="page-header"><i class="fa fa-files-o"></i> Fornecedores Disponíveis</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="fa fa-beer"></i>Receitas</li>
 						<li><i class="fa fa-files-o"></i>Todas as Receitas</li>
 					</ol>
 				</div>
 			</div>
               <!-- Form validations --> 
 
-              <!--Consulta MySQL para popular tabela com receitas cadastradas-->             
+              <!--Consulta MySQL para popular tabela fornecedores cadastradas-->             
               
               <?php  
                         $PDO = db_connect(); 
 
-                        $sql = "SELECT * FROM receita";
+                        $sql = "SELECT * FROM fornecedor";
                 
                         $stmt = $PDO->prepare($sql);
                         $stmt->execute();
@@ -188,18 +187,17 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Receitas de cervejas
+                              Fornecedores
                           </header>
                           <div class="table-responsive">
                             <table class="table">
                               <thead>
                                 <tr>
                                   <th>ID</th>
-                                  <th>Nome</th>
-                                  <th>Original Gravity</th>
-                                  <th>Final Gravity</th>
-                                  <th>International Bitter Units</th>
-                                  <th>Alcohol by Volume</th>
+                                  <th>Nome Fornecedor</th>
+                                  <th>Telefone</th>
+                                  <th>E-mail</th>
+                                  <th>Ingrediente</th>
                                   <th class="actions">Ações</th>
                                 </tr>
                               </thead>
@@ -207,12 +205,11 @@
                            
                               <tbody>
                                 <tr>
-                                  <td><?=$row["cod_receita"]?></td>
-                                  <td><?=$row["nome_receita"]?></td>
-                                  <td><?=$row["indice_og"]?></td>
-                                  <td><?=$row["indice_fg"]?></td>
-                                  <td><?=$row["indice_ibu"]?></td>
-                                  <td><?=$row["indice_abv"]?></td>
+                                  <td><?=$row["cod_fornecedor"]?></td>
+                                  <td><?=$row["razao_social_fornecedor"]?></td>
+                                  <td><?=$row["telefone_fornecedor"]?></td>
+                                  <td><?=$row["email_fornecedor"]?></td>
+                                  <td><?=$row["cidade_fornecedor"]?></td>
                                   <td class="actions">
 				                    <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
                                     <button class="btn btn-large btn-primary" onclick="RemoveTableRow(this)" type="button">Editar</button>

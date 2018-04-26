@@ -65,10 +65,10 @@
                         <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
                     </li><!-- Menu e sub menu que abre ao clicar -->
                     <li class="sub-menu">
-                        <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
+                        <a class="" href="receitas.php"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
                         <ul class="sub">
                             <li>
-                                <a class="" href="new-recipe.html">Nova Receita</a>
+                                <a class="" href="cadastro-receita.php">Nova Receita</a>
                             </li><!-- Chama a tela de nova receita -->
                             <li>
                                 <a class="" href="view-recipe.html">Visualizar</a>
@@ -137,18 +137,17 @@
                                         <br>
 
                                 
-
+                                <div class="container">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">CEP</label>
                                         <div class="col-sm-5">
                                             <input class="form-control" type="text" name="cnpj">                                            
                                         </div>                                        
                                     </div>
+                                </div>
                         
+                                <br>
 
-
-                                        <br>    
-                                        <br>
 
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Endereço</label>
