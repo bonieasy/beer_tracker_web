@@ -2,12 +2,10 @@
 
 require_once('init.php');
 
-//$conexao = mysql_connect ("localhost", "root", "bancoGND");
-//mysql_select_db ("gnd_cervejaria", $conexao);
-
 if (isset($_POST["submit"]))
 
 {
+    // Banco receita
 
     $nome_receita = $_POST ["nome_receita"];
     $descricao_receita = $_POST ["comentario_receita"];
@@ -20,6 +18,8 @@ if (isset($_POST["submit"]))
     $tempo_fermentacao = $_POST ["fermentacao"];
     $tempo_repouso = $_POST ["rampa"];
     $tempo_variacao = $_POST ["variacao"];
+    
+    $ingrediente1 = $_POST ["ingred1"];
 
         $PDO = db_connect();
 
@@ -34,7 +34,13 @@ if (isset($_POST["submit"]))
         tempo_fervura,
         tempo_fermentacao,
         tempo_repouso,
-        tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";   
+        tempo_variacao) VALUES ('$nome_receita', '$descricao_receita', '$indice_og', '$indice_fg', '$indice_ibu', '$indice_abv', '$tempo_brasagem','$tempo_fervura', '$tempo_fermentacao', '$tempo_repouso', '$tempo_variacao')";          
+        
+
+        //$sql = "INSERT INTO ingrediente_receita
+           // (cod_ingrediente, cod_receita, quantidade, preco_ingrediente)
+             //   VALUES ('$cod_ingrediente', '$cod_receita', '$quantidade', '$preco_ingrediente')";
+
 
 
         $stmt = $PDO->prepare($sql);
