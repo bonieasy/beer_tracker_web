@@ -33,7 +33,7 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" action="ingredientes-insert.php" method="post">
 				<span class="contact100-form-title">
-					Cadastro de Ingrediente
+					Cadastro de Pedido
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
@@ -48,6 +48,38 @@
 					<span class="focus-input100"></span>
 				</div>
 
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Needed Services</span>
+					<div>
+						<select class="selection-2" name="service">
+							<option>Choose Services</option>
+							<option>Online Store</option>
+							<option>eCommerce Bussiness</option>
+							<option>UI/UX Design</option>
+							<option>Online Services</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Budget</span>
+					<div>
+						<select class="selection-2" name="budget">
+							<option>Select Budget</option>
+							<option>1500 $</option>
+							<option>2000 $</option>
+							<option>2500 $</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Message</span>
+					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
