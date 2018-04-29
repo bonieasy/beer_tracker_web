@@ -26,7 +26,7 @@
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
+          <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -51,7 +51,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="shopping-cart"></span>
-                  Ingredientes
+                  Pedidos
                 </a>
               </li>
               <li class="nav-item">
@@ -63,27 +63,15 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
-                  Pedidos
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Lotes
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
                   Relatórios
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
-                  Administração de acessos
+                  Integrations
                 </a>
-              </li>            
+              </li>
             </ul>
           </div>
         </nav>
@@ -98,7 +86,7 @@
         <?php  
                         $PDO = db_connect(); 
 
-                        $sql = "SELECT * FROM fornecedor";
+                        $sql = "SELECT * FROM receita";
                 
                         $stmt = $PDO->prepare($sql);
                         $stmt->execute();
@@ -108,35 +96,38 @@
 
           
 
-          <h2>Fornecedores</h2>
+          <h2>Receitas</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                <th>ID</th>
-                <th>Nome Fornecedor</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Ingrediente</th>
-                <th class="actions">Ações</th>
+                  <th>ID</th>
+                  <th>Nome da receita</th>
+                  <th>OG</th>
+                  <th>FG</th>
+                  <th>IBU</th>
+                  <th>ABV</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
-            <?php foreach($info as $row): ?>              
-                <tbody>
+              <?php foreach($info as $row): ?>                     
+                           
+              <tbody>
                 <tr>
-                    <td><?=$row["cod_fornecedor"]?></td>
-                    <td><?=$row["razao_social_fornecedor"]?></td>
-                    <td><?=$row["telefone_fornecedor"]?></td>
-                    <td><?=$row["email_fornecedor"]?></td>
-                    <td><?=$row["cidade_fornecedor"]?></td>
-                    <td class="actions">
-                    <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
+                  <td><?=$row["cod_receita"]?></td>
+                  <td><?=$row["nome_receita"]?></td>
+                  <td><?=$row["indice_og"]?></td>
+                  <td><?=$row["indice_fg"]?></td>
+                  <td><?=$row["indice_ibu"]?></td>
+                  <td><?=$row["indice_abv"]?></td>
+                  <td class="actions">
+            <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
                     <button class="btn btn-large btn-primary" onclick="RemoveTableRow(this)" type="button">Editar</button>
                     <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
-                    </td>
+                  </td>
                 </tr>                               
-                </tbody>
-            <?php endforeach; ?>
+              </tbody>
+                <?php endforeach; ?>
             </table>
           </div>
         </main>
