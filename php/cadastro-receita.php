@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <?php require_once('init.php');?>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <meta content="GeeksLabs" name="author">
     <meta content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" name="keyword">
     <link href="../img/favicon.png" rel="shortcut icon">
-    <title>GND Systems</title><!-- Bootstrap CSS -->
+    <title>GND | Cervejaria</title><!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
     <link href="../css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
     <!-- font icon -->
@@ -38,7 +39,7 @@
 
                     <!-- user login dropdown start-->
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="../img/boni.jpg"></span> <span class="username">Ariele Bonifácio</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu extended logout">
                             <li style="list-style: none; display: inline">
                                 <div class="log-arrow-up"></div>
@@ -48,7 +49,7 @@
                             </li>
 
                             <li>
-                                <a href="login.html"><i class="fa-sign-out"></i> Sair</a>
+                                <a href="login.php"><i class="fa-sign-out"></i> Sair</a>
                             </li>
                         </ul>
                     </li><!-- user login dropdown end -->
@@ -61,13 +62,13 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="index.php"><i class="icon_house_alt"></i> <span>Home</span></a>
+                        <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
                     </li><!-- Menu e sub menu que abre ao clicar -->
                     <li class="sub-menu">
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
                         <ul class="sub">
                             <li>
-                                <a class="" href="cadastrar_receita.php">Nova Receita</a>
+                                <a class="" href="new-recipe.html">Nova Receita</a>
                             </li><!-- Chama a tela de nova receita -->
                             <li>
                                 <a class="" href="view-recipe.html">Visualizar</a>
@@ -82,16 +83,10 @@
                         <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-list-ul"></i> <span>Pedidos</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="ingredientes.php"><i class="fa fa-list-ul"></i> <span>Ingredientes</span></a>
-                    </li>
-                    <li class="menu">
                         <a class="" href="javascript:;"><i class="icon_table"></i> <span>Lotes</span></a>
                     </li>
                     <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relatórios</span></a>
-                    </li>
-                    <li class="menu">
-                        <a class="" href="login_adm.php"><i class="fa fa-user"></i> <span>Gerenciamento</span></a>
+                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relat�rios</span></a>
                     </li>
                 </ul><!-- sidebar menu end-->
             </div>
@@ -117,9 +112,11 @@
                         <section class="panel">
                             <header class="panel-heading">
                                 Nova Receita
-                            </header><!--Fim titulo painel -->
-                            <!-- Conte�do do painel -->
-                            <form action="cadastrar_receita.php" method="POST">
+                            </header>
+                            <!--Fim titulo painel -->
+
+                            <!-- Conteúdo do painel -->
+                            <form action="receita-function.php" method="POST">
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome da receita</label>
@@ -127,84 +124,119 @@
                                             <input class="form-control" type="text" name="nome_receita">
                                         </div>
                                     </div>
-                                    
+                                    <br>
+                                    <br>
+                                    <!--Campo descrição-->
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Descrição</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control round-input" type="text" name="comentario_receita">
+                                            <textarea rows="5" class="form-control" type="text" name="comentario_receita"> </textarea>
                                         </div>
                                     </div>
+                                    <!--Campo descrição-->
                                 </div>
                         </section>
                     </div>
-                </div><!-- Titulo do painel de ingredientes -->
-                <!-- painel teste inicio -->
+                </div>
+                
+                <!-- Titulo do painel de ingredientes -->
+                <!-- painel inicio -->                                            
+
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
                                 Ingredientes
-                            </header><!--Fim titulo painel -->
-                            <!-- Conte�do do painel -->
+                            </header>
+                            <!--Fim titulo painel -->
+                                    
+                            <!-- Conteúdo do painel -->
                             <div class="panel-body">
-                                <!--dropdown inicio-->
+                                <!--dropdown inicio ingrediente 1-->
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos Malte</label>
-                                    <div class="col-sm-9">
+                                    <label class="col-sm-2 control-label">Ingrediente 01</label>
+                                    <div class="col-sm-7">
                                         <select class="form-control" id="ingred1" name="ingred1">
-                                            <option value="1">
-                                                Cevada
-                                            </option>
-                                            <option value="2">
-                                                Trigo
-                                            </option>
-                                            <option value="2">
-                                                Arroz
-                                            </option>
-                                        </select>
+                                        
+                    <!--Consulta MySQL para popular dropdown-->
+                        <?php  
+                        $PDO = db_connect(); 
+
+                           $sql = "SELECT * FROM ingrediente";
+                    
+                           $stmt = $PDO->prepare($sql);
+                           $stmt->execute();
+                           $info = $stmt->fetchAll();
+                        ?>
+
+                    <!-- Lista ingrediente cadastrados - Banco -->
+                        <?php foreach($info as $ingred): ?>
+                                        <option><?=$ingred["nome_ingrediente"]?></option>
+                                            <?php endforeach; ?>  
+                                        </select>                                        
                                     </div>
+
+                                    <div class="input-group col-sm-3">
+                                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                                    </div>   
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos Lupulo</label>
-                                    <div class="col-md-9">
-                                        <select class="form-control" id="ingred2" name="ingred2">
-                                            <option value="1">
-                                                Lupulo 1
-                                            </option>
-                                            <option value="2">
-                                                Lupulo 2
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos leveduras</label>
-                                    <div class="col-md-9">
-                                        <select class="form-control" id="ingred3" name="ingred3">
-                                            <option value="1">
-                                                Saccharomyces cerevisiae
-                                            </option>
-                                            <option value="2">
-                                                Saccharomyces uvarum
-                                            </option>
-                                            <option value="3">
-                                                Brettanomyces sp
-                                            </option>
-                                            <option value="4">
-                                                Saccharomyces bayanus
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div><!-- dropdow fim -->
+
+                                
+                               <!-- dropdow fim -->
+                               <br>
+                               <br>
+                <!--dropdown inicio ingrediente 2-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ingrediente</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" id="ingred2" name="ingred2">                       
+                <!-- Lista ingrediente cadastrados - Banco -->
+                        <?php foreach($info as $ingred): ?>
+                            <option><?=$ingred["nome_ingrediente"]?></option>
+                        <?php endforeach; ?>  
+                        </select>
+                    </div>
+
+                    <div class="input-group col-sm-3">
+                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                    </div> 
+                </div>
+                <!-- dropdow fim -->
+                                <br>
+                                <br>
+                <!--dropdown inicio ingrediente 3-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ingrediente 03</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" id="ingred3" name="ingred3">                       
+                <!-- Lista ingrediente cadastrados - Banco -->
+                        <?php foreach($info as $ingred): ?>
+                            <option><?=$ingred["nome_ingrediente"]?></option>
+                        <?php endforeach; ?>  
+                        </select>
+                    </div>
+                    <div class="input-group col-sm-3">
+                        <label class="control-label">Quantidade</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
+                    </div> 
+                </div>
+                <!-- dropdow fim -->
+
+                <!-- Comentario maroto para escolha dos ingredientes-->
+                <div class="col-sm-10">
+                    <span class="help-block">* Escolha os ingredientes para a base da cerveja</span>
+                </div>
+                <!-- Fim do comentario maroto para escolha dos ingredientes-->
                             </div>
                         </section>
                     </div>
-                </div><!-- Painel com os ingredientes -->
+                </div>
+                <!-- Fim painel com os ingredientes -->
+
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Ind�ces
+                                Indíces
                             </header>
                             <div class="panel-body">
                                 <table>
@@ -239,7 +271,7 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Tempos
+                                Duração
                             </header>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -258,7 +290,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Fermenta��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Fermentação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -287,7 +319,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Varia��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
+                                                        <label class="col-sm-2 control-label">Variação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -312,16 +344,16 @@
                 </div>
                 
             </section><!--main content end-->
+            
             <div class="text-center">
                 <div class="credits">
                     <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
                 </div>
             </div>
-
             </form>
         </section><!-- container section end -->
 
-        <script src="/assets/ckeditor/ckeditor.js" type="text/javascript">
+        <script src="../assets/ckeditor/ckeditor.js" type="text/javascript">
         </script> <!-- custom form component script for this page-->
 
     </section>
