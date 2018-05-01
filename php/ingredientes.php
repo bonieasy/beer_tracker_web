@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require_once('init.php');?>
+cc
 <html lang="en">
 <head>
 	<title>Cadastro de ingrediente</title>
