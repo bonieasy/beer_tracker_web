@@ -3,7 +3,7 @@
 // constantes com as credenciais de acesso ao banco MySQL
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', 'fatec123');
+define('DB_PASS', '1234');
 define('DB_NAME', 'cervejaria');
   
 // habilita todas as exibições de erros
