@@ -14,15 +14,15 @@
         <title>Administração | Login</title>
 
         <!-- Bootstrap CSS -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- bootstrap theme -->
-        <link href="/css/bootstrap-theme.css" rel="stylesheet">
+        <link href="/dist/css/bootstrap-theme.css" rel="stylesheet">
         <!--external css-->
         <!-- font icon -->
-        <link href="/css/elegant-icons-style.css" rel="stylesheet" />
-        <link href="/css/font-awesome.css" rel="stylesheet" />
+        <link href="/dist/css/elegant-icons-style.css" rel="stylesheet" />
+        <link href="/dist/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom styles -->
-        <link href="/css/signin.css" rel="stylesheet"/>
+        <link href="/dist/css/signin.css" rel="stylesheet"/>
 
 </head>
 
