@@ -14,15 +14,15 @@
         <title>Administração | Login</title>
 
         <!-- Bootstrap CSS -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- bootstrap theme -->
-        <link href="/css/bootstrap-theme.css" rel="stylesheet">
+        <link href="/dist/css/bootstrap-theme.css" rel="stylesheet">
         <!--external css-->
         <!-- font icon -->
-        <link href="/css/elegant-icons-style.css" rel="stylesheet" />
-        <link href="/css/font-awesome.css" rel="stylesheet" />
+        <link href="/dist/css/elegant-icons-style.css" rel="stylesheet" />
+        <link href="/dist/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom styles -->
-        <link href="/css/signin.css" rel="stylesheet"/>
+        <link href="/dist/css/signin.css" rel="stylesheet"/>
 
 </head>
 
@@ -31,10 +31,11 @@
       <div class="admin" "table-scrol">  
       <h1 class="h2 mb-3 font-weight-normal" align="center">Administração de Acessos</h1> 
 
+        <br>
   <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
     
     
-      <table class="table table-bordered table-hover table-striped table-responsive" style="table-layout: fixed">  
+      <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
           <thead>  
     
           <tr>  
@@ -49,7 +50,7 @@
     
           <?php  
           $PDO = db_connect(); 
-          $view_users_query="select * from usuario";//select query for viewing users.  
+          $view_users_query="select * from usuario"; //Seleciona a query com todos os usuarios.  
           $run=$PDO->query($view_users_query);
           if (is_array($run) || is_object($run))
 			{
@@ -60,12 +61,12 @@
                 <td>'. $usuario["login_usuario"] .'</td>
                 <td>'. $usuario["email_usuario"] .'</td>
                 <td class="center">
-					<button type="button" class="btn">
+					<button type="button" class="btn-update-login">
 					<img class="img-btn" src="/img/edit.svg" alt="Edit" height="20" width="20">
                     </button>
                     
                     <button type="button" id="btn-delete-login" class="btn-delete-login">
-					<img class="img-btn" src="/img/rubbish-bin.svg" alt="Delete" height="20" width="20">
+                    <img class="img-btn" src="/img/rubbish-bin.svg" alt="Delete" height="20" width="20">
 					</button>
                 </td>
                 ');
@@ -75,7 +76,7 @@
     
       </table>  
           </div>  
-  </div> 
+  </div>
 
 <!--===============================================================================================-->
 	<script src="/javascript/modal.js"></script>
