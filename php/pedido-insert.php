@@ -5,12 +5,6 @@
     $name = isset($_POST['nome']) ? $_POST['nome'] : null;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : null;   
 
-    if (empty($name) || empty($descricao))
-    {
-        echo "Volte e preencha todos os campos";
-        exit;
-    }
-
     // insere no banco
     $PDO = db_connect();
     $sql = "INSERT INTO pedido(cod_cliente, descricao_ingrediente) VALUES(:nome, :descricao)";
