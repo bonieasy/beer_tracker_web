@@ -48,3 +48,17 @@ $('#btn-edit').on('click', function(e) {
       } 
   }) 
 });
+
+$('#btn-delete-login').on('click', function(e) {
+  var codUsuario = $('#codUsuario').html();
+  $.ajax({
+    type: "POST",
+    url: "login-delete.php",
+    data: { 'cod_usuario' : codUsuario },
+    success: function(data) {
+      if(data.status == 'success'){
+        alert('success');
+      } 
+  }
+  }) 
+});
