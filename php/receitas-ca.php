@@ -13,11 +13,11 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="/dist/css/dashboard.css" rel="stylesheet">
     <!-- font icon -->
-    <link href="../css/elegant-icons-style.css" rel="stylesheet">
+    <link href="/dist/css/elegant-icons-style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -121,9 +121,9 @@
                   <td><?=$row["indice_ibu"]?></td>
                   <td><?=$row["indice_abv"]?></td>
                   <td class="actions">
-            <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
-                    <button class="btn btn-large btn-primary" onclick="RemoveTableRow(this)" type="button">Editar</button>
-                    <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+                    <button class="btn btn-large btn-success">Visualizar</button>
+                    <button class="btn btn-large btn-primary">Editar</button>
+                    <button onclick="return confirm('Tem certeza que vai fazer essa merda?')" href="delete-cerveja.php?cod_receita=<?= $row->cod_receita ?>" class="btn btn-large btn-danger">Remover</button>
                   </td>
                 </tr>                               
               </tbody>

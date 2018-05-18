@@ -13,12 +13,12 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="/dist/css/dashboard.css" rel="stylesheet">
     <!-- font icon -->
-    <link href="../css/elegant-icons-style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/dist/css/elegant-icons-style.css" rel="stylesheet">
+    <link href="/dist/css/font-awesome.min.css" rel="stylesheet">
     
   </head>
 
