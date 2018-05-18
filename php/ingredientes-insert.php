@@ -19,7 +19,7 @@
     $stmt->bindParam(':descricao', $descricao);
 
     if ($stmt->execute()){
-        header('Location: ingredientes.php');
+        header('Location: index.php');
     }
     else{
         echo "Erro ao cadastrar";
