@@ -5,12 +5,6 @@
     $name = isset($_POST['nome']) ? $_POST['nome'] : null;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : null;   
 
-    if (empty($name) || empty($descricao))
-    {
-        echo "Volte e preencha todos os campos";
-        exit;
-    }
-
     // insere no banco
     $PDO = db_connect();
     $sql = "INSERT INTO ingrediente(nome_ingrediente, descricao_ingrediente) VALUES(:nome, :descricao)";
@@ -19,7 +13,7 @@
     $stmt->bindParam(':descricao', $descricao);
 
     if ($stmt->execute()){
-        header('Location: index.php');
+        header("Refresh:0; url=ingrediente-cadastro.php");
     }
     else{
         echo "Erro ao cadastrar";

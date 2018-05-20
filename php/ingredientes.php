@@ -4,8 +4,8 @@
   <body>
     <main role="main">
       <h2>Todos os Ingredientes</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
+      <div class="table-responsive" id="table">
+        <table class="table table-striped table-sm" id="">
           <thead>
             <tr>
               <th>#</th>
@@ -31,7 +31,7 @@
                           </button>
                         </td>
                         <td class="align-middle"> 
-                          <button type="button" class="btn btn-default" aria-label="Left Align">
+                          <button type="button" class="btn btn-default" aria-label="Left Align" onclick="deleteIngrediente('.$ingrediente["cod_ingrediente"].')">
                             <span class="fa fa-trash" aria-hidden="true"></span>
                           </button>
                         </td>

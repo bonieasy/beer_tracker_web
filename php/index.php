@@ -234,6 +234,7 @@
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="/dist/js/bootstrap.min.js"></script>
     <script src="/js/dist/index.js"></script>
+    <script src="/js/dist/ingredientes.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
