@@ -13,11 +13,21 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/dist/css/dashboard.css" rel="stylesheet">
+    <link href="../dist/css/dashboard.css" rel="stylesheet">
     <!-- font icon -->
-    <link href="/dist/css/elegant-icons-style.css" rel="stylesheet">
+    <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
+
+    <script language="JavaScript" type="text/javascript">
+      function deletar_saporra(cod_receita) {
+        if (confirm('Confirma deleção desta receita?')) {
+          window.location.href = 'delete-cerveja.php?cod_receitar=' + cod_receita;
+        }
+        return false;
+      }
+    </script>
+
   </head>
 
   <body>
@@ -26,7 +36,7 @@
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+          <a class="nav-link" href="login.php">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -55,7 +65,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="fornecedor.php">
                   <span data-feather="users"></span>
                   Fornecedores
                 </a>
@@ -122,8 +132,11 @@
                   <td><?=$row["indice_abv"]?></td>
                   <td class="actions">
                     <button class="btn btn-large btn-success">Visualizar</button>
-                    <button class="btn btn-large btn-primary">Editar</button>
-                    <button onclick="return confirm('Tem certeza que vai fazer essa merda?')" href="delete-cerveja.php?cod_receita=<?= $row->cod_receita ?>" class="btn btn-large btn-danger">Remover</button>
+                    
+                    <a class="btn btn-large btn-primary"
+                      href="editar-receita.php?cod_receita=<?=$row['cod_receita']?>">Editar</a>
+
+                    <button class="btn btn-large btn-danger" onclick='deletar_saporra(<?=$row["cod_receita"]?>)'>Remover</button>
                   </td>
                 </tr>                               
               </tbody>

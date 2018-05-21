@@ -28,7 +28,7 @@
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
+          <a class="nav-link" href=login.php>Sair</a>
         </li>
       </ul>
     </nav>
@@ -41,7 +41,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span class="icon_house_alt"></span>
-                  Home <span class="sr-only">(current)</span>
+                  Home <span class="sr-only"></span>
                 </a>
               </li>
               <li class="nav-item">
@@ -95,24 +95,40 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
            
-          </div>         
+          </div>  
 
-          <h2>Fornecedores</h2>
+        <?php 
+        
+        $sql ="SELECT * FROM fornecedor WHERE cod_fornecedor=1";
+
+        //Seleciona os registros
+
+        $PDO = db_connect();
+
+        $resultado = $PDO->prepare($sql);
+        $resultado->execute();
+        $row_info = $resultado->fetch(PDO::FETCH_ASSOC); 
+                
+        ?>
+
+          <h2>Editar Fornecedores</h2>
 
             <!-- Conteúdo do painel -->
-            <form action="cadastro-fornecedor-function.php" method="POST">
+            <form action="editar-fornecedor-function.php" method="POST">
                     <div class="panel-body">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Razão Social</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="razao_social">
+                                <input class="form-control" type="text" name="razao_social"
+                                value="<?=$row_info['razao_social_fornecedor']?>">
                             </div>
                         </div>
                         <!--Campo CNPJ-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label">CNPJ</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cnpj">                                            
+                                <input class="form-control" type="text" name="cnpj"
+                                value="<?php if(isset($row_info['cnpj_fornecedor'])){ echo $row_info['cnpj_fornecedor']; } ?>">                                            
                             </div>                                        
                         </div>
                         <!--Campo CNPJ-->   
@@ -120,7 +136,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">CEP</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cep">                                            
+                                <input class="form-control" type="text" name="cep"
+                                value="<?php if(isset($row_info['cep_fornecedor'])){ echo $row_info['cep_fornecedor']; } ?>">                                            
                             </div>                                        
                         </div>  
 
@@ -128,7 +145,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Endereço</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="endereco">                                            
+                                <input class="form-control" type="text" name="endereco"
+                                value"<?php if(isset($row_info['endereco_fornecedor'])){ echo $row_info['endereco_fornecedor']; } ?>">                                            
                             </div>                                        
                         </div>
 
@@ -136,7 +154,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Cidade</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cidade">                                            
+                                <input class="form-control" type="text" name="cidade"
+                                value="<?php if(isset($row_info['cidade_fornecedor'])){ echo $row_info['cidade_fornecedor']; } ?>">                                            
                             </div>                                        
                         </div>
 
@@ -144,7 +163,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Estado</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="estado">                                            
+                                <input class="form-control" type="text" name="estado"
+                                <?php if(isset($row_info['estado_fornecedor'])){ echo $row_info['estado_fornecedor']; } ?>>                                            
                             </div>                                        
                         </div>
 
@@ -152,7 +172,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">País</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="pais">                                            
+                                <input class="form-control" type="text" name="pais"
+                                <?php if(isset($row_info['pais_fornecedor'])){ echo $row_info['pais_fornecedor']; } ?>>                                            
                             </div>                                        
                         </div>
                         
@@ -160,7 +181,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Telefone</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="telefone">                                            
+                                <input class="form-control" type="text" name="telefone"
+                                <?php if(isset($row_info['telefone_fornecedor'])){ echo $row_info['telefone_fornecedor']; } ?>>                                            
                             </div>                                        
                         </div>
 
@@ -168,7 +190,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" name="email">                                            
+                                <input class="form-control" type="text" name="email"
+                                <?php if(isset($row_info['email_fornecedor'])){ echo $row_info['email_fornecedor']; } ?>>                                            
                             </div>                                        
                         </div>
                     </div>                          
@@ -178,7 +201,7 @@
                 <!--Botões-->
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit" name="submit">Salvar Fornecedor</button> <button class="btn btn-default" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit" name="edit">Salvar Alterações</button> <button class="btn btn-default" type="button">Cancelar</button>
                     </div>
                 </div> 
                 <!--Fim botões-->            

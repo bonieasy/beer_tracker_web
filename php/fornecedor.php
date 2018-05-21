@@ -13,11 +13,21 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../css/dashboard.css" rel="stylesheet">
+    <link href="../dist/css/dashboard.css" rel="stylesheet">
     <!-- font icon -->
-    <link href="../css/elegant-icons-style.css" rel="stylesheet">
+    <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
+
+    <script language="JavaScript" type="text/javascript">
+      function deletar_saporra(cod_fornecedor) {
+        if (confirm('Confirma deleção do fornecedor?')) {
+          window.location.href = 'delete-fornecedor.php?cod_fornecedor=' + cod_fornecedor;
+        }
+        return false;
+      }
+    </script>
+
   </head>
 
   <body>
@@ -26,7 +36,7 @@
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
+          <a class="nav-link" href="login.php">Sair</a>
         </li>
       </ul>
     </nav>
@@ -93,20 +103,18 @@
            
           </div>
         
-        <!--Consulta MySQL para popular tabela com receitas cadastradas-->             
+        <!--Consulta MySQL para popular tabela com fornecedores cadastrados-->             
               
         <?php  
-                        $PDO = db_connect(); 
+              $PDO = db_connect(); 
 
-                        $sql = "SELECT * FROM fornecedor";
-                
-                        $stmt = $PDO->prepare($sql);
-                        $stmt->execute();
-                        $info = $stmt->fetchAll();
+              $sql = "SELECT * FROM fornecedor";
+      
+              $stmt = $PDO->prepare($sql);
+              $stmt->execute();
+              $info = $stmt->fetchAll();
         ?>
-        <!--Fim consulta MySQL-->
-
-          
+        <!--Fim consulta MySQL que popula tabela-->          
 
           <h2>Fornecedores</h2>
           <div class="table-responsive">
@@ -124,16 +132,20 @@
             <?php foreach($info as $row): ?>              
                 <tbody>
                 <tr>
-                    <td><?=$row["cod_fornecedor"]?></td>
-                    <td><?=$row["razao_social_fornecedor"]?></td>
-                    <td><?=$row["telefone_fornecedor"]?></td>
-                    <td><?=$row["email_fornecedor"]?></td>
-                    <td><?=$row["cidade_fornecedor"]?></td>
-                    <td class="actions">
-                    <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
-                    <button class="btn btn-large btn-primary" onclick="RemoveTableRow(this)" type="button">Editar</button>
-                    <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
-                    </td>
+                  <td><?=$row["cod_fornecedor"]?></td>
+                  <td><?=$row["razao_social_fornecedor"]?></td>
+                  <td><?=$row["telefone_fornecedor"]?></td>
+                  <td><?=$row["email_fornecedor"]?></td>
+                  <td><?=$row["cidade_fornecedor"]?></td>
+                  <td class="actions">
+                  <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
+
+                  <a class="btn btn-large btn-primary"
+                  href="Editar-fornecedor.php?cod_fornecedor=<?=$row['cod_fornecedor']?>">Editar</a>
+
+                  
+                  <button class="btn btn-large btn-danger" onclick='deletar_saporra(<?=$row["cod_fornecedor"]?>)'>Remover</button>
+                  </td>
                 </tr>                               
                 </tbody>
             <?php endforeach; ?>

@@ -10,15 +10,15 @@
     <meta content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" name="keyword">
     <link href="../img/favicon.png" rel="shortcut icon">
     <title>GND | Cervejaria</title><!-- Bootstrap CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
-    <link href="../css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
     <!-- font icon -->
-    <link href="../css/elegant-icons-style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
+    <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
+    <link href="../dist/css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
     <!-- color picker -->
     <!-- Custom styles -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <link href="../dist/css/style.css" rel="stylesheet">
+    <link href="../dist/css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 
 </head>
 <body>
