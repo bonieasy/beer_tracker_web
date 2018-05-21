@@ -10,8 +10,8 @@
     SET nome_ingrediente = :nome, descricao_ingrediente = :descricao 
     where cod_ingrediente = :cod");
     $stmt->bindParam(':cod', $codIngrediente, PDO::PARAM_INT);
-    $stmt->bindParam(':nome', $nomeIngrediente, PDO::PARAM_INT);
-    $stmt->bindParam(':descricao', $descricaoIngrediente, PDO::PARAM_INT);
+    $stmt->bindParam(':nome', $nomeIngrediente, PDO::PARAM_STR);
+    $stmt->bindParam(':descricao', $descricaoIngrediente, PDO::PARAM_STR);
 
     if ($stmt->execute()){
         echo ($codIngrediente);
