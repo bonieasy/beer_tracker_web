@@ -99,7 +99,7 @@
 
         <?php 
         
-        $sql ="SELECT * FROM fornecedor WHERE cod_fornecedor=1";
+        $sql ="SELECT * FROM fornecedor WHERE cod_fornecedor=cod_fornecedor";
 
         //Seleciona os registros
 
@@ -146,7 +146,7 @@
                             <label class="col-sm-2 control-label">Endereço</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" name="endereco"
-                                value"<?php if(isset($row_info['endereco_fornecedor'])){ echo $row_info['endereco_fornecedor']; } ?>">                                            
+                                value="<?=$row_info['endereco_fornecedor']?>">                                            
                             </div>                                        
                         </div>
 
@@ -164,7 +164,7 @@
                             <label class="col-sm-2 control-label">Estado</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" name="estado"
-                                <?php if(isset($row_info['estado_fornecedor'])){ echo $row_info['estado_fornecedor']; } ?>>                                            
+                                value="<?=$row_info['estado_fornecedor']?>">                                            
                             </div>                                        
                         </div>
 
@@ -173,7 +173,7 @@
                             <label class="col-sm-2 control-label">País</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" name="pais"
-                                <?php if(isset($row_info['pais_fornecedor'])){ echo $row_info['pais_fornecedor']; } ?>>                                            
+                                value="<?=$row_info['pais_fornecedor']?>">                                            
                             </div>                                        
                         </div>
                         
@@ -182,7 +182,7 @@
                             <label class="col-sm-2 control-label">Telefone</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" name="telefone"
-                                <?php if(isset($row_info['telefone_fornecedor'])){ echo $row_info['telefone_fornecedor']; } ?>>                                            
+                                value="<?=$row_info['telefone_fornecedor']?>">                                            
                             </div>                                        
                         </div>
 
@@ -191,7 +191,7 @@
                             <label class="col-sm-2 control-label">E-mail</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" name="email"
-                                <?php if(isset($row_info['email_fornecedor'])){ echo $row_info['email_fornecedor']; } ?>>                                            
+                                value="<?=$row_info['email_fornecedor']?>">                                            
                             </div>                                        
                         </div>
                     </div>                          

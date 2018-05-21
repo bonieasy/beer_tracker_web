@@ -14,16 +14,16 @@
     <title>GND Systems</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="../css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="../css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../dist/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="../dist/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Custom styles -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/style-responsive.css" rel="stylesheet" />
+    <link href="../dist/css/style.css" rel="stylesheet">
+    <link href="../dist/css/style-responsive.css" rel="stylesheet" />
 
   </head>
 
