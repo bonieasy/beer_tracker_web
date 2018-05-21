@@ -26,7 +26,17 @@
                         <td>'. $pedido["cod_pedido"] .'</td>
                         <td>'. $pedido["razao_social"] .'</td>
                         <td>'. $pedido["data_entrega"] .'</td>
-                        <td>'. $pedido["data_pedido"] .'</td>                            
+                        <td>'. $pedido["data_pedido"] .'</td>
+                        <td class="align-middle"> 
+                          <button id="btn-edit" type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                          </button>
+                        </td>
+                        <td class="align-middle"> 
+                          <button type="button" class="btn btn-default" aria-label="Left Align" onclick="deletePedido('.$pedido["cod_pedido"].')">
+                            <span class="fa fa-trash" aria-hidden="true"></span>
+                          </button>
+                        </td>                            
                       </tr>');
                 }
               }
@@ -39,5 +49,6 @@
         Novo Pedido
       </button>
     </main>
+    <script src="/js/dist/pedidos.js"></script>
   </body>
 </html>
