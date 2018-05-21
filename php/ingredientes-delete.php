@@ -13,3 +13,4 @@ $codIngrediente = $_POST['cod'];
     else{
         echo ($codIngrediente);
     }
+?>
