@@ -7,7 +7,7 @@
 
     // insere no banco
     $PDO = db_connect();
-    $sql = "INSERT INTO ingrediente(nome_ingrediente, descricao_ingrediente) VALUES(:nome, :descricao)";
+    $sql = "SELECT * FROM produtos WHERE nome LIKE '%".$palavra."%' ORDER BY nome";
     $stmt = $PDO->prepare($sql);
     $stmt->bindParam(':nome', $name);
     $stmt->bindParam(':descricao', $descricao);
