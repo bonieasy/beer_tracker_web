@@ -14,10 +14,10 @@
     $stmt->bindParam(':descricao', $descricaoIngrediente, PDO::PARAM_STR);
 
     if ($stmt->execute()){
-        echo ($codIngrediente);
+        echo ('true');
     }
     else{
-        echo ($codIngrediente);
+        echo ('false');
     }
     
 ?>
