@@ -17,7 +17,7 @@
         echo ('true');
     }
     else{
-        echo ('false');
+        echo ($stmt->erroInfo());
     }
     
 ?>

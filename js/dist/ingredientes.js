@@ -9,10 +9,10 @@ function deleteIngrediente(){
         if(response=='true'){
             $("#deleteModal").modal('hide')
         } else {
-            alert(codIngrediente)
+            console.log(response)
         }
     });
-
+    $("#main").load("ingredientes.php")
 };
 
 function editIngrediente(){
@@ -25,9 +25,13 @@ function editIngrediente(){
     url: "ingredientes-edit.php",
     data: { cod: cod, nome: nome, descricao: descricao }
     }).done(function(response) {
-        location.reload();
-        $("#main").load("ingredientes.php");
+        if(response=='true'){
+            $("#editModal").modal('hide')
+        } else {
+            console.log(response)
+        }
     });
+    $("#main").load("ingredientes.php");    
 };
 
 $('#deleteModal').on('show.bs.modal', function (event) {

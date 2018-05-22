@@ -8,9 +8,9 @@ $codIngrediente = $_POST['cod'];
     $stmt->bindParam(':cod', $codIngrediente, PDO::PARAM_INT);
 
     if ($stmt->execute()){
-        echo ($codIngrediente);
+        echo ('true');
     }
     else{
-        echo ($codIngrediente);
+        echo ($stmt->erroInfo());
     }
 ?>
