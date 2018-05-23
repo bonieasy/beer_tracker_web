@@ -1,29 +1,25 @@
 <?php 
 require_once('init.php');
 
-    // pega o ID da URL
-    $id = isset($_GET['codUsuario']) ? (int) $_GET['codUsuario'] : null;
- 
-    // valida o ID
-    if (empty($id))
-    {
-        echo "ID para alteração não definido";
-    exit;
-    }
+$codUsuario = $_POST["cod"];
+$nomeUsuario = $_POST["nome"];
+$loginUsuario = $_POST["login"];
+$emailUsuario = $_POST["email"];
 
-        $PDO = db_connect();    
-        $sql = 'UPDATE usuario SET nome_usuario=:nome, login_usuario=:login, email_usuario=:email';
-		$sql .= 'WHERE cod_usuario = :cod_usuario';
+        $PDO = db_connect();
+        $stmt = $PDO->prepare("UPDATE usuario 
+        SET nome_usuario=:nome, login_usuario=:login_user, email_usuario=:email
+        where cod_usuario = :cod");    
  
-			$stm = $conexao->prepare($sql);
-            $stm->bindValue(':nome', $nome);
-            $stm->bindValue(':login', $login);
-			$stm->bindValue(':email', $email);
+            $stmt->bindParam(':cod', $codUsuario, PDO::PARAM_INT);
+            $stmt->bindValue(':nome', $nomeUsuario, PDO::PARAM_STR);
+            $stmt->bindValue(':login_user', $loginUsuario, PDO::PARAM_STR);
+			$stmt->bindValue(':email', $emailUsuario, PDO::PARAM_STR);
 
             if ($stmt->execute()){
-                header('refresh:0');
+                echo ('true');
             }
             else{
-                $response_array['status'] = $stmt->errorInfo();
+                echo ($stmt->erroInfo());
             }
 ?>

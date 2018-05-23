@@ -22,7 +22,7 @@ $stmt->bindParam(':email', $email);
 $stmt->bindParam(':senha', $senha);
 
 if ($stmt->execute()){
-    header('Location: login.php');
+    header("Refresh:0; url=login_adm.php");
 }
 else{
     echo "Erro ao cadastrar";
