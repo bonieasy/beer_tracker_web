@@ -20,9 +20,9 @@
     <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
 
     <script language="JavaScript" type="text/javascript">
-      function deletar_saporra(cod_receita) {
+      function deletar(cod_receita) {
         if (confirm('Confirma deleção desta receita?')) {
-          window.location.href = 'delete-cerveja.php?cod_receitar=' + cod_receita;
+          window.location.href = 'delete-cerveja.php?cod_receita=' + cod_receita;
         }
         return false;
       }
@@ -94,17 +94,15 @@
         <!--Consulta MySQL para popular tabela com receitas cadastradas-->             
               
         <?php  
-                        $PDO = db_connect(); 
+          $PDO = db_connect(); 
 
-                        $sql = "SELECT * FROM receita";
-                
-                        $stmt = $PDO->prepare($sql);
-                        $stmt->execute();
-                        $info = $stmt->fetchAll();
+          $sql = "SELECT * FROM receita";
+  
+          $stmt = $PDO->prepare($sql);
+          $stmt->execute();
+          $info = $stmt->fetchAll();
         ?>
-        <!--Fim consulta MySQL-->
-
-          
+        <!--Fim consulta MySQL-->          
 
           <h2>Receitas</h2>
           <div class="table-responsive">
@@ -136,7 +134,7 @@
                     <a class="btn btn-large btn-primary"
                       href="editar-receita.php?cod_receita=<?=$row['cod_receita']?>">Editar</a>
 
-                    <button class="btn btn-large btn-danger" onclick='deletar_saporra(<?=$row["cod_receita"]?>)'>Remover</button>
+                    <button class="btn btn-large btn-danger" onclick='deletar(<?=$row["cod_receita"]?>)'>Remover</button>
                   </td>
                 </tr>                               
               </tbody>

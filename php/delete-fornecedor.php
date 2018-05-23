@@ -2,9 +2,9 @@
     
 $PDO = db_connect(); 
 
-$cod_receita = $_GET["cod_fornecedor"];
+$cod1 = $_GET["cod_fornecedor"];
 
-$sql = "DELETE FROM fornecedor WHERE cod_fornecedor=$cod_receita";
+$sql = "DELETE FROM fornecedor WHERE cod_fornecedor=$cod1";
 
 $statement = $PDO->prepare($sql);
 

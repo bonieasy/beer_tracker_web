@@ -2,9 +2,9 @@
     
 $PDO = db_connect(); 
 
-$cod_receita = $_GET["cod_receita"];
+$cod = $_GET["cod_receita"];
 
-$sql = "DELETE FROM receita WHERE cod_receita=$cod_receita";
+$sql = "DELETE FROM receita WHERE cod_receita=$cod";
 
 $statement = $PDO->prepare($sql);
 
