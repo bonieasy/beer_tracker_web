@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../img/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>GND | Systems</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,21 +47,20 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Home <span class="sr-only">(current)</span>
+                <a class="nav-link" href="index.php">
+                  Home
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
+                <a class="nav-link" href="receitas-ca.php">
+                  <span class="fa fa-beer"></span>
                   Receitas
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="shopping-cart"></span>
-                  Pedidos
+                  Ingredientes
                 </a>
               </li>
               <li class="nav-item">
@@ -73,17 +72,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="bar-chart-2"></span>
+                  Pedidos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Lotes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
                   Relatórios
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
-                  Integrations
+                  Administração de acessos
                 </a>
-              </li>
+              </li>            
             </ul>
           </div>
+      </div>
+    </div>    
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -104,7 +117,15 @@
         ?>
         <!--Fim consulta MySQL-->          
 
-          <h2>Receitas</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Receitas</h2>
+          </div>
+
+          <div class="col-md-4">
+            <a class="btn btn-primary" href="cadastro-receita.php" role="button">+ Adicionar Receita</a>            
+          </div>
+        </div>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>

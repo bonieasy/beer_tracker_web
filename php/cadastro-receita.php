@@ -39,13 +39,12 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span class="icon_house_alt"></span>
-                  Home <span class="sr-only">(current)</span>
+                <a class="nav-link" href="index.php">
+                  Home
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="receitas-ca.php">
                   <span class="fa fa-beer"></span>
                   Receitas
                 </a>
@@ -57,7 +56,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="fornecedor.php">
                   <span data-feather="users"></span>
                   Fornecedores
                 </a>
@@ -100,28 +99,20 @@
           <h2>Nova Receita</h2>
 
            <!-- Conteúdo do painel -->
-           <form action="receita-function.php" method="POST">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Nome da receita</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="nome_receita">
-                            </div>
-                        </div>
-                        <!--Campo descrição-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Descrição</label>
-                            <div class="col-sm-10">
-                                <textarea rows="5" class="form-control" type="text" name="comentario_receita"> </textarea>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    </div>
-                </div>       
+           <form action="receita-function.php" method="POST"> 
 
-              <!--Consulta MySQL para popular dropdown-->
-              <?php  
+            <div class="form-group">
+              <label for="inputAddress">Nome da Receita</label>
+              <input type="text" class="form-control" name="nome_receita">
+            </div> 
+
+            <div class="form-group">
+              <label>Descrição</label>
+              <textarea rows="2" class="form-control" type="text" name="comentario_receita"> </textarea>
+            </div>   
+
+            <!--Consulta MySQL para popular dropdown-->
+            <?php  
                 $PDO = db_connect(); 
 
                 $sql = "SELECT * FROM ingrediente";
@@ -129,91 +120,100 @@
                 $stmt = $PDO->prepare($sql);
                 $stmt->execute();
                 $info = $stmt->fetchAll();
-              ?>
-
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Ingredientes</label>
-                    <div class="col-sm-10">
-                    <select class="form-control" id="ingred1" name="ingred1">
-                    
-                    <!-- Lista ingrediente cadastrados - Banco -->
-                    <?php foreach($info as $ingred): ?>
-                      <option><?=$ingred["nome_ingrediente"]?></option>
-                    <?php endforeach; ?>  
-                    
-                    </select>
-                </div>
-
-                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Ingredientes</label>
-                    <div class="col-sm-10">
-                    <select class="form-control" id="ingred1" name="ingred2">
-                    
-                    <!-- Lista ingrediente cadastrados - Banco -->
-                    <?php foreach($info as $ingred): ?>
-                      <option><?=$ingred["nome_ingrediente"]?></option>
-                    <?php endforeach; ?>
-                    
-                    </select>
-                </div>
-
-                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Ingredientes</label>
-                    <div class="col-sm-10">
-                    <select class="form-control" id="ingred1" name="ingred3">
-                    
-                    <!-- Lista ingrediente cadastrados - Banco -->
-                    <?php foreach($info as $ingred): ?>
-                      <option><?=$ingred["nome_ingrediente"]?></option>
-                    <?php endforeach; ?>                    
-                    </select>
-                </div>               
-                  
-                  <div class="form-group">
-                      <label class="col-sm-10 control-label">Original Gravity</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
-                  </div>
+              ?>                     
               
-                  <div class="form-group">
-                      <label class="col-sm-10 control-label">Final Gravity</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="FG"> <span class="input-group-btn"></span>
-                  </div>
-              
-                  <div class="form-group">
-                      <label class="col-sm-2 control-label">International Bitter Units</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="IBU"> <span class="input-group-btn"></span>
-                  </div>
-              
-                  <div class="form-group">
-                      <label class="col-sm-10 control-label">Alcohol by Volume</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="ABV">
-                  </div>
-
-
-                  <div class="form-group">
-                      <div class="col-lg-30">
-                         
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Brassagem</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="brassagem"> <span class="input-group-btn"></span>
-                            </div>
-                      
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Fervura</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fervura"> <span class="input-group-btn"></span>
-                            </div>
-                        
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Fermentação</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
-                            </div>
-                        
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Rampa Ativa</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="rampa"> <span class="input-group-btn"></span>
-                            </div>
-                        
-              
-                      </div>
-                  </div>
-                
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label>Ingrediente</label>
+                <select class="form-control" name="ingred1">
+                  <!-- Lista ingrediente cadastrados - Banco -->
+                  <?php foreach($info as $ingred): ?>
+                    <option><?=$ingred["nome_ingrediente"]?></option>
+                  <?php endforeach; ?>
+                 <!-- Lista ingrediente cadastrados - Banco --> 
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label>Ingrediente</label>
+                <select class="form-control" name="ingred2">
+                  <!-- Lista ingrediente cadastrados - Banco -->
+                  <?php foreach($info as $ingred): ?>
+                    <option><?=$ingred["nome_ingrediente"]?></option>
+                  <?php endforeach; ?>
+                  <!-- Lista ingrediente cadastrados - Banco -->
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label>Ingrediente</label>
+                <select class="form-control" name="ingred3">
+                  <!-- Lista ingrediente cadastrados - Banco -->
+                  <?php foreach($info as $ingred): ?>
+                    <option><?=$ingred["nome_ingrediente"]?></option>
+                  <?php endforeach; ?>
+                  <!-- Lista ingrediente cadastrados - Banco -->
+                </select>
+              </div>
+            </div>
 
 
 
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label>Original Gravity</label>
+                  <input class="form-control input-number" type="number" value="0" name="OG">                
+              </div>
 
+              <div class="form-group col-md-3">
+                <label>Final Gravity</label>
+                <input class="form-control input-number" type="number" value="0" name="FG">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label>International Bitter Units</label>
+                <input class="form-control input-number" type="number" value="0" name="IBU">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label>Alcohol by Volume</label>
+                <input class="form-control input-number" type="number" value="0" name="ABV">
+              </div>              
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-2">
+                <label>Brassagem</label>
+                  <input class="form-control input-number" type="number" value="0" name="brassagem">                
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Fervura</label>
+                <input class="form-control input-number" type="number" value="0" name="fervura">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Fermentação</label>
+                <input class="form-control input-number" type="number" value="0" name="fermentacao">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Rampa Ativa</label>
+                <input class="form-control input-number" type="number" value="0" name="rampa">
+              </div>   
+
+              <div class="form-group col-md-2">
+                <label>Variação</label>
+                <input class="form-control input-number" type="number" value="0" name="variacao">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Temperatura</label>
+                <input class="form-control input-number" type="number" value="0" name="temperatura">
+              </div>
+
+            </div>    
+
+            
+ 
                         </section>
                     </div>
 

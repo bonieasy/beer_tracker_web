@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../img/favicon.png">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>GND | Systems</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,13 +39,13 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span class="icon_house_alt"></span>
-                  Home <span class="sr-only">(current)</span>
+                <a class="nav-link" href="index.php">
+                
+                  Home 
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="receitas-ca.php">
                   <span class="fa fa-beer"></span>
                   Receitas
                 </a>
@@ -57,7 +57,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="fornecedor.php">
                   <span data-feather="users"></span>
                   Fornecedores
                 </a>

@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../img/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>GND | Systems</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -116,7 +116,16 @@
         ?>
         <!--Fim consulta MySQL que popula tabela-->          
 
-          <h2>Fornecedores</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Fornecedores</h2>
+          </div>
+
+          <div class="col-md-4">
+            <a class="btn btn-primary" href="fornecedor-cadastro.php" role="button">+ Adicionar Fornecedor</a>            
+          </div>
+        </div>
+
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
