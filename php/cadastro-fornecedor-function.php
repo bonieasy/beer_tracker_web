@@ -42,7 +42,7 @@ if (isset($_POST["submit"]))
 
        if ($stmt->execute()){         
         
-        echo "Fornecedor cadastrada";    
+        header('Location: fornecedor.php');    
 
        }
 

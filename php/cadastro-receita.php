@@ -156,6 +156,27 @@
             </div>
 
 
+          <div class="row">
+              <div class="form-group col-md-4">
+                <label>Quantidade</label>
+                  <input class="form-control input-number" type="number" value="0" name="qtd1">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Quantidade</label>
+                  <input class="form-control input-number" type="number" value="0" name="qtd2">
+              </div>
+              <div class="form-group col-md-4">
+                <label>Quantidade</label>
+                  <input class="form-control input-number" type="number" value="0" name="qtd3"> 
+              </div>
+            </div>
+
+
+
+
+
+
+
 
             <div class="row">
               <div class="form-group col-md-3">

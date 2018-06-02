@@ -48,7 +48,7 @@ if (isset($_POST["submit"]))
 
        if ($stmt->execute()){         
         
-        echo "Receita cadastrada";    
+        header('Location: receitas-ca.php');    
 
        }
 
