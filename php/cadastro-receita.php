@@ -128,7 +128,7 @@
                 <select class="form-control" name="ingred1">
                   <!-- Lista ingrediente cadastrados - Banco -->
                   <?php foreach($info as $ingred): ?>
-                    <option><?=$ingred["nome_ingrediente"]?></option>
+                  <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
                   <?php endforeach; ?>
                  <!-- Lista ingrediente cadastrados - Banco --> 
                 </select>
@@ -138,7 +138,7 @@
                 <select class="form-control" name="ingred2">
                   <!-- Lista ingrediente cadastrados - Banco -->
                   <?php foreach($info as $ingred): ?>
-                    <option><?=$ingred["nome_ingrediente"]?></option>
+                  <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
                   <?php endforeach; ?>
                   <!-- Lista ingrediente cadastrados - Banco -->
                 </select>
@@ -148,7 +148,7 @@
                 <select class="form-control" name="ingred3">
                   <!-- Lista ingrediente cadastrados - Banco -->
                   <?php foreach($info as $ingred): ?>
-                    <option><?=$ingred["nome_ingrediente"]?></option>
+                    <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
                   <?php endforeach; ?>
                   <!-- Lista ingrediente cadastrados - Banco -->
                 </select>
