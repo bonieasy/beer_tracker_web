@@ -97,7 +97,7 @@
               <form>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Produtos</label>
-                  <select class="form-control" id="selectProduto" onchange="changeValue()">
+                  <select class="form-control" id="selectProduto">
                   <option value=""></opition>
                     <?php 
                     $PDO = db_connect();
@@ -141,6 +141,8 @@
     <script src="/dist/js/bootstrap.min.js"></script>
     <script src="/assets/js/vendor/holder.min.js"></script>
     <script src="/js/dist/pedidos-cadastro.js"></script>
+    <script src="/dist/inputmask/inputmask.numeric.extensions.js"></script>
+    <script src="/dist/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.js"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
