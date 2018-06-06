@@ -96,85 +96,53 @@
            
           </div>         
 
-          <h2>Novo Lote</h2>
+          <h2>Novo Produto</h2>
 
            <!-- Conteúdo do painel -->
+           <form action="produto-function.php" method="POST"> 
 
-            <!--Consulta MySQL para popular nome do produto-->
-               
+            <div class="form-group">
+              <label for="inputAddress">Produto</label>
+              <input type="text" class="form-control" name="nome_produto">
+            </div> 
+  
 
-           <form action="cadastro-lote-function.php" method="POST"> 
-
-           <!--Consulta MySQL para popular dropdown-->
+            <!--Consulta MySQL para popular dropdown-->
             <?php  
                 $PDO = db_connect(); 
 
-                $sql = "SELECT * FROM produto";
+                $sql = "SELECT * FROM receita";
         
                 $stmt = $PDO->prepare($sql);
                 $stmt->execute();
                 $info = $stmt->fetchAll();
-              ?>    
-
-            <div class="form-group">
-              <label>Produto</label>
-              <select class="form-control" name="nome_produto">
-                  <!-- Lista receitas cadastrados - Banco -->
-                  <?php foreach($info as $ingred): ?>
-                  <option value="<?=$ingred["cod_produto"]?>"><?=$ingred["nome_produto"]?></option>
-                  <?php endforeach; ?>
-                  <!-- Lista produtos cadastrados - Banco -->
-                </select>
-            </div>  
-
+              ?>                     
               
             <div class="row">
-              <div class="form-group col-md-3">
-                <label>Início</label>
-                    <input type="date" id="date" name="inicio">
-              </div>
-
-
-              <div class="form-group col-md-3">
-                <label>Envase</label>
-                    <input type="date" id="date" name="envase">
-              </div>
-
-              <div class="form-group col-md-3">
-                <label>Fermentação</label>
-                    <input type="date" id="date" name="fermentacao">
-              </div>
-
-              <div class="form-group col-md-3">
-                <label>Término</label>
-                    <input type="date" id="date" name="termino">
+              <div class="form-group col-md-12">
+                <label>Receita</label>
+                <select class="form-control" name="receita">
+                  <!-- Lista de receitas cadastrados - Banco -->
+                  <?php foreach($info as $ingred): ?>
+                  <option value="<?=$ingred["cod_receita"]?>"><?=$ingred["nome_receita"]?></option>
+                  <?php endforeach; ?>
+                 <!-- Lista de receitas cadastrados - Banco --> 
+                </select>
               </div>
             </div>
-
 
             <div class="row">
-              <div class="form-group col-md-3">
-                <label>Original Gravity</label>
-                  <input class="form-control input-number" type="number" value="0" name="OG">                
+              <div class="form-group col-md-6">
+                <label>Mililitros (ml)</label>
+                    <input class="form-control input-number" type="number" value="0" name="ml">
               </div>
-
-              <div class="form-group col-md-3">
-                <label>Final Gravity</label>
-                <input class="form-control input-number" type="number" value="0" name="FG">
-              </div>
-
-              <div class="form-group col-md-3">
-                <label>International Bitter Units</label>
-                <input class="form-control input-number" type="number" value="0" name="IBU">
-              </div>
-
-              <div class="form-group col-md-3">
-                <label>Alcohol by Volume</label>
-                <input class="form-control input-number" type="number" value="0" name="ABV">
-              </div>              
-            </div>
-
-         
+              <div class="form-group col-md-6">
+                <label>Preço</label>
+                 <input type="text" class="form-control" name="preco">
+              </div>             
+             
+            </div> 
+           
  
                         </section>
                     </div>
@@ -183,7 +151,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit" name="submit">Salvar Lote</button> <button class="btn btn-default" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Salvar Produto</button> <button class="btn btn-default" type="button">Cancelar</button>
                     </div>
                 </div>
                 
