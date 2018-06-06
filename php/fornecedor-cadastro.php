@@ -102,6 +102,30 @@
             <!-- Conteúdo do painel -->
             <form action="cadastro-fornecedor-function.php" method="POST">
                     <div class="panel-body">
+
+                      <!--Consulta MySQL para popular dropdown-->
+                      <?php  
+                              $PDO = db_connect(); 
+
+                              $sql = "SELECT * FROM ingrediente";
+                      
+                              $stmt = $PDO->prepare($sql);
+                              $stmt->execute();
+                              $info = $stmt->fetchAll();
+                            ?>     
+
+                        <div class="form-group col-md-10">
+                          <label>Ingrediente</label>
+                          <select class="form-control" name="ingred">
+                            <!-- Lista ingrediente cadastrados - Banco -->
+                            <?php foreach($info as $ingred): ?>
+                            <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
+                            <?php endforeach; ?>
+                            <!-- Lista ingrediente cadastrados - Banco -->
+                          </select>
+                        </div>
+
+
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Razão Social</label>
                             <div class="col-sm-10">
@@ -171,6 +195,9 @@
                                 <input class="form-control" type="text" name="email">                                            
                             </div>                                        
                         </div>
+
+                        
+
                     </div>                          
                                                
                     </div>                    

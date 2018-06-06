@@ -30,26 +30,28 @@ if (isset($_POST["submit"]))
         pais_fornecedor,
         telefone_fornecedor,
         email_fornecedor) VALUES ('$razao_social_fornecedor', '$cnpj_fornecedor', '$cep_fornecedor', '$endereco_fornecedor', '$cidade_fornecedor', '$estado_fornecedor', '$pais_fornecedor','$telefone_fornecedor', '$email_fornecedor')";          
-        
-    
-        //$sql = "INSERT INTO ingrediente_receita
-           // (cod_ingrediente, cod_receita, quantidade, preco_ingrediente)
-             //   VALUES ('$cod_ingrediente', '$cod_receita', '$quantidade', '$preco_ingrediente')";
-
 
 
         $stmt = $PDO->prepare($sql);
 
-       if ($stmt->execute()){         
-        
-        header('Location: fornecedor.php');    
+        $stmt->execute();
 
-       }
+        $cod_fornecedor = $PDO->lastInsertId();
 
-       else
-        {
-           print_r($stmt->errorInfo());
-       }
+
+        //Insert em fornecedor_ingrediente
+
+        $cod_ingrediente = $_POST ["ingred"];
+
+        $sql = "INSERT INTO fornecedor_ingrediente
+        (cod_ingrediente, cod_fornecedor)
+        VALUES ($cod_ingrediente, $cod_fornecedor)";
+
+        $stmt = $PDO->prepare($sql);
+        $stmt->execute();
+
+        header('Location: fornecedor.php');
+    
 }
 
 ?>
