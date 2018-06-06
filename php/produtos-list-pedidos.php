@@ -13,10 +13,10 @@
 
     if(!empty($produto)){
         echo("<tr>");
-        echo("<td>".$produto['nome_produto']."</td>");
-        echo("<td id='precoProduto'>".$produto['preco_produto']."</td>");
-        echo("<td><input id='qtdProduto' type='text' oninput='calcTotal(this.value)'></td>");
-        echo("<td><span id='total'></span></td>");
+        echo("<td class='align-middle'>".$produto['nome_produto']."</td>");
+        echo("<td class='align-middle' id='precoProduto'>".$produto['preco_produto']."</td>");
+        echo("<td class='align-middle'><input class='form-control' type='number' id='qtdProduto' oninput='calcTotal(this.value)'></td>");
+        echo("<td class='align-middle'><span id='total'></span></td>");
         echo("</tr>");        
     } else {
         print_r($cod);

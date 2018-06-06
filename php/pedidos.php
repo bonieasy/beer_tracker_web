@@ -12,6 +12,8 @@
               <th>Cliente</th>
               <th>Data Entrega</th>
               <th>Data Pedido</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>

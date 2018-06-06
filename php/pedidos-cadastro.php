@@ -59,10 +59,10 @@
               <table class="table table-striped table-sm" id="tableProdutos">
                 <thead>
                   <tr>
-                    <th>Produto</th>
-                    <th>Preço Unitario</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
+                    <th class="w-25">Produto</th>
+                    <th class="w-25">Preço Unitario</th>
+                    <th class="w-25">Quantidade</th>
+                    <th class="w-25">Total</th>
                   </tr>
                 </thead>
                 <tbody>
