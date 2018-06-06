@@ -21,7 +21,6 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h2 class="text-light">Cadastro de Pedido</h2>
       </div>
 
@@ -31,14 +30,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">CNPJ</label>
-                <input type="text" class="form-control" id="nome" placeholder="" value="" required>
+                <input type="text" class="form-control" id="nome" placeholder="CNPJ" value="" required>
                 <div class="invalid-feedback">
                   Insira CNPJ.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Entrega</label>
-                <input type="date" class="form-control" id="cnpj" placeholder="" value="" required>
+                <input type="date" class="form-control" id="cnpj" placeholder="Data da entrega" value="" required>
                 <div class="invalid-feedback">
                   Insira a entrega.
                 </div>
@@ -48,18 +47,10 @@
             <div class="mb-3">
               <label for="username">Cliente</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="entrega" placeholder="Username" required>
+                <input type="text" class="form-control" id="entrega" placeholder="Nome do cliente" required>
                 <div class="invalid-feedback" style="width: 100%;">
                   Insira o nome do cliente.
                 </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
               </div>
             </div>
             <h4 class="mb-3">Produtos</h4>
@@ -98,8 +89,7 @@
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Produtos</label>
                   <select class="form-control" id="selectProduto">
-                  <option value=""></opition>
-                    <?php 
+                  <?php 
                     $PDO = db_connect();
                     $produtos = $PDO->query('SELECT cod_produto, nome_produto From produto');
                       if (is_array($produtos) || is_object($produtos))
@@ -108,7 +98,7 @@
                           echo ('<option value="'.$produto["cod_produto"].'">'. $produto["nome_produto"] .'</option>');
                         }
                       }
-                    ?>
+                  ?>
                   </select>
                 </div>
               </form>
@@ -119,6 +109,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -131,18 +122,11 @@
       </footer>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/assets/js/vendor/popper.min.js"></script>
     <script src="/dist/js/bootstrap.min.js"></script>
-    <script src="/assets/js/vendor/holder.min.js"></script>
-    <script src="/js/dist/pedidos-cadastro.js"></script>
-    <script src="/dist/inputmask/inputmask.numeric.extensions.js"></script>
-    <script src="/dist/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.js"></script>
+    <script src="/dist/js/pedidos-cadastro.js"></script>
+    <script src="/dist/inputmask/inputmask.js"></script>
+    <script src="/dist/inputmask/jquery.inputmask.js"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
