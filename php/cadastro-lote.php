@@ -96,85 +96,69 @@
            
           </div>         
 
-          <h2>Nova Receita</h2>
+          <h2>Novo Lote</h2>
 
            <!-- Conteúdo do painel -->
-           <form action="receita-function.php" method="POST"> 
+
+            <!--Consulta MySQL para popular nome do produto-->
+            <?php 
+            
+                $sql ="SELECT * FROM produto WHERE cod_produto=cod_produto";
+
+                //Seleciona os registros
+
+                $PDO = db_connect();
+
+                $resultado = $PDO->prepare($sql);
+                $resultado->execute();
+                $row_info = $resultado->fetch(PDO::FETCH_ASSOC); 
+                        
+            ?>    
+
+           <form action="#" method="POST"> 
 
             <div class="form-group">
-              <label for="inputAddress">Nome da Receita</label>
-              <input type="text" class="form-control" name="nome_receita">
-            </div> 
+              <label for="inputAddress">Produto</label>
+              <input type="text" class="form-control" name="nome_produto">
+            </div>  
 
-            <div class="form-group">
-              <label>Descrição</label>
-              <textarea rows="2" class="form-control" type="text" name="comentario_receita"> </textarea>
-            </div>   
-
-            <!--Consulta MySQL para popular dropdown-->
-            <?php  
-                $PDO = db_connect(); 
-
-                $sql = "SELECT * FROM ingrediente";
+            <!--Consulta MySQL para popular campos-->
+            <?php 
         
-                $stmt = $PDO->prepare($sql);
-                $stmt->execute();
-                $info = $stmt->fetchAll();
-              ?>                     
+                $sql ="SELECT * FROM lote WHERE cod_lote=cod_lote";
+
+                //Seleciona os registros
+
+                $PDO = db_connect();
+
+                $resultado = $PDO->prepare($sql);
+                $resultado->execute();
+                $row_info = $resultado->fetch(PDO::FETCH_ASSOC); 
+                        
+            ?>                    
               
             <div class="row">
-              <div class="form-group col-md-4">
-                <label>Ingrediente</label>
-                <select class="form-control" name="ingred1">
-                  <!-- Lista ingrediente cadastrados - Banco -->
-                  <?php foreach($info as $ingred): ?>
-                  <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
-                  <?php endforeach; ?>
-                 <!-- Lista ingrediente cadastrados - Banco --> 
-                </select>
+              <div class="form-group col-md-3">
+                <label>Início</label>
+                    <input type="date" id="date">
               </div>
-              <div class="form-group col-md-4">
-                <label>Ingrediente</label>
-                <select class="form-control" name="ingred2">
-                  <!-- Lista ingrediente cadastrados - Banco -->
-                  <?php foreach($info as $ingred): ?>
-                  <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
-                  <?php endforeach; ?>
-                  <!-- Lista ingrediente cadastrados - Banco -->
-                </select>
+
+
+              <div class="form-group col-md-3">
+                <label>Envase</label>
+                    <input type="date" id="date">
               </div>
-              <div class="form-group col-md-4">
-                <label>Ingrediente</label>
-                <select class="form-control" name="ingred3">
-                  <!-- Lista ingrediente cadastrados - Banco -->
-                  <?php foreach($info as $ingred): ?>
-                    <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
-                  <?php endforeach; ?>
-                  <!-- Lista ingrediente cadastrados - Banco -->
-                </select>
+
+              <div class="form-group col-md-3">
+                <label>Fermentação</label>
+                    <input type="date" id="date">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label>Término</label>
+                    <input type="date" id="date">
               </div>
             </div>
-
-
-          <div class="row">
-              <div class="form-group col-md-4">
-                <label>Quantidade</label>
-                  <input class="form-control input-number" type="number" value="0" name="qtd1">
-              </div>
-              <div class="form-group col-md-4">
-                <label>Quantidade</label>
-                  <input class="form-control input-number" type="number" value="0" name="qtd2">
-              </div>
-              <div class="form-group col-md-4">
-                <label>Quantidade</label>
-                  <input class="form-control input-number" type="number" value="0" name="qtd3"> 
-              </div>
-            </div>
-
-
-
-
-
 
 
 
@@ -200,40 +184,7 @@
               </div>              
             </div>
 
-            <div class="row">
-              <div class="form-group col-md-2">
-                <label>Brassagem</label>
-                  <input class="form-control input-number" type="number" value="0" name="brassagem">                
-              </div>
-
-              <div class="form-group col-md-2">
-                <label>Fervura</label>
-                <input class="form-control input-number" type="number" value="0" name="fervura">
-              </div>
-
-              <div class="form-group col-md-2">
-                <label>Fermentação</label>
-                <input class="form-control input-number" type="number" value="0" name="fermentacao">
-              </div>
-
-              <div class="form-group col-md-2">
-                <label>Rampa Ativa</label>
-                <input class="form-control input-number" type="number" value="0" name="rampa">
-              </div>   
-
-              <div class="form-group col-md-2">
-                <label>Variação</label>
-                <input class="form-control input-number" type="number" value="0" name="variacao">
-              </div>
-
-              <div class="form-group col-md-2">
-                <label>Temperatura</label>
-                <input class="form-control input-number" type="number" value="0" name="temperatura">
-              </div>
-
-            </div>    
-
-            
+         
  
                         </section>
                     </div>
@@ -242,7 +193,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit" name="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
+                        <button class="btn btn-primary" type="submit" name="submit">Salvar Lote</button> <button class="btn btn-default" type="button">Cancelar</button>
                     </div>
                 </div>
                 
