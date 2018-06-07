@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="">
 
     <title>Cadastrar novo pedido</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="/dist/css/form-validation.css" rel="stylesheet">
   </head>
 
@@ -59,14 +55,14 @@
               <table class="table table-striped table-sm" id="tableProdutos">
                 <thead>
                   <tr>
-                    <th class="w-25">Produto</th>
-                    <th class="w-25">Preço Unitario</th>
-                    <th class="w-25">Quantidade</th>
-                    <th class="w-25">Total</th>
+                    <th class="w-7 text-center">#</th>
+                    <th class="w-25 text-center">Produto</th>
+                    <th class="w-25 text-center">Preço Unitario</th>
+                    <th class="w-25 text-center">Quantidade</th>
+                    <th class="w-25 text-center">Total</th>
                   </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
                 </table>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Adicionar</button>

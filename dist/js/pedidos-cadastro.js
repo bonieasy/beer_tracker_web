@@ -11,14 +11,8 @@ function addProduto() {
   });    
 }
 
-function calcTotal(val){
-    $("#total").text(Number(val) * Number($("#precoProduto").text()));
+function calcTotal(qtd, preco){
+    var reais = "R$ ";
+    var resultado = Number(qtd) * Number(preco);
+    $("#total").text(reais + resultado);
 }
-
-$("#qtdProduto").ready(function(){
-  $("#qtdProduto").inputmask({
-                    alias: 'numeric', 
-                    allowMinus: false,  
-                    digits: 2, 
-                    max: 999.99});
-});

@@ -8,8 +8,8 @@ $codPedido = $_POST['cod'];
     $stmt->bindParam(':cod', $codPedido, PDO::PARAM_INT);
 
     if ($stmt->execute()){
-        echo ($codPedido);
+        echo ('true');
     }
     else{
-        echo ($codPedido);        
+        echo ($stmt->errorInfo());   
     }
