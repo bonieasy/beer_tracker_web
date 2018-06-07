@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="">
 
     <title>GND | Systems</title>
 
@@ -34,7 +33,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="index.php">
                   Home
                 </a>
               </li>
@@ -54,7 +53,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" onclick="chamarTela('ingredientes')">
+                <a class="nav-link" onclick="chamarTela('ingredientes')">
                   Ingredientes
                 </a>
               </li>
@@ -74,7 +73,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="chamarTela('login_adm')">
                   Administração de acessos
                 </a>
               </li>
