@@ -26,14 +26,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">CNPJ</label>
-                <input type="text" class="form-control" id="nome" placeholder="CNPJ" value="" required>
+                <input type="text" class="form-control" id="cnpj" placeholder="CNPJ" value="" required>
                 <div class="invalid-feedback">
                   Insira CNPJ.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Entrega</label>
-                <input type="date" class="form-control" id="cnpj" placeholder="Data da entrega" value="" required>
+                <input type="date" class="form-control" id="entrega" placeholder="Data da entrega" value="" required>
                 <div class="invalid-feedback">
                   Insira a entrega.
                 </div>
@@ -43,9 +43,20 @@
             <div class="mb-3">
               <label for="username">Cliente</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="entrega" placeholder="Nome do cliente" required>
+              <select class="form-control" id="selectProduto">
+                  <?php 
+                    $PDO = db_connect();
+                    $clientes = $PDO->query('SELECT cod_cliente, razao_social From cliente');
+                      if (is_array($clientes) || is_object($clientes))
+                      {
+                        foreach($clientes as $cliente) {
+                          echo ('<option value="'.$cliente["cod_cliente"].'">'. $cliente["razao_social"] .'</option>');
+                        }
+                      }
+                  ?>
+                  </select>
                 <div class="invalid-feedback" style="width: 100%;">
-                  Insira o nome do cliente.
+                  Selecione o cliente.
                 </div>
               </div>
             </div>
@@ -66,7 +77,7 @@
                 </tbody>
                 </table>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Adicionar</button>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="cadastrarPedido()">Cadastrar</button>
           </form>
         </div>
       </div>
@@ -106,7 +117,6 @@
           </div>
         </div>
       </div>
-      </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1 text-light">&copy; 2017-2018 GND Systems</p>
@@ -121,8 +131,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="/dist/js/bootstrap.min.js"></script>
     <script src="/dist/js/pedidos-cadastro.js"></script>
-    <script src="/dist/inputmask/inputmask.js"></script>
-    <script src="/dist/inputmask/jquery.inputmask.js"></script>
+    <script src="/dist/js/jquery.tabletojson.min.js"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
