@@ -43,7 +43,7 @@
             <div class="mb-3">
               <label for="username">Cliente</label>
               <div class="input-group">
-              <select class="form-control" id="selectProduto">
+              <select class="form-control" id="cliente">
                   <?php 
                     $PDO = db_connect();
                     $clientes = $PDO->query('SELECT cod_cliente, razao_social From cliente');

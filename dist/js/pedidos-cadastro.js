@@ -16,18 +16,19 @@ function calcTotal(qtd, preco){
     var resultado = Number(qtd) * Number(preco);
     $("#total").text(reais + resultado);
 }
+
 function cadastrarPedido(){
   
-  var pedidosJson = $('#tableProdutos').tableToJSON();
+  var produtosJson = $('#tableProdutos').tableToJSON();
   var cnpj = $('#cnpj').val();
-  var cliente = $('#cliente').val();
+  var cliente = $("#cliente option:selected").val();
   var entrega = $('#entrega').val();
 
   $.ajax({
     type: "POST",
     url: "pedido-insert.php",
-    data: { cnpj: cnpj, cliente: cliente, entrega: entrega, pedidos: pedidosJson}
+    data: { cnpj: cnpj, cliente: cliente, entrega: entrega, produtos: produtosJson}
   }).done( function(response) {
-    alert(response);
+    document.write(response);
   });
 }

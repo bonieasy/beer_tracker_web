@@ -12,7 +12,7 @@
     $PDO = db_connect();
 
     $sqlPedido = "INSERT INTO pedido(data_pedido, data_entrega, cod_cliente, valor_pedido)
-                  VALUES(DATE_FORMAT(NOW(), '%Y,%m,%d'), STR_TO_DATE(:entrega, '%Y/%m/%d'),
+                  VALUES(DATE_FORMAT(NOW(), '%Y,%m,%d'), :entrega,
                   :cliente, :total)";
 
     $stmtPedido = $PDO->prepare($sqlPedido);
@@ -23,21 +23,9 @@
     if($stmtPedido->execute()){
         $codPedido = $PDO->lastInsertId();
     } else {
-        echo($stmtPedido->errorInfo());
+        print_r($stmtPedido->errorInfo());
     }
 
-    foreach($produtos as $produto){}
-    $sqlItemPedido = "INSERT INTO item_pedido(cod_cliente, descricao_ingrediente) VALUES(:nome, :descricao)";
-
-    $stmtItemPedido = $PDO->prepare($sqlItemPedido);
-    $stmtItemPedido->bindParam(':cod_pedido', $codPedido);
-    $stmtItemPedido->bindParam(':cod_produto', $produto['cod_produto']);
-
-    if ($stmt->execute()){
-        header('Location: ingredientes.php');
-    }
-    else{
-        echo "Erro ao cadastrar";
-        print_r($stmt->errorInfo());
-    }
+    print_r($produtos);
+    
 ?>
