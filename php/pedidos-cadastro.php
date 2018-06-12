@@ -71,6 +71,7 @@
                     <th class="w-25 text-center">Preço Unitario</th>
                     <th class="w-25 text-center">Quantidade</th>
                     <th class="w-25 text-center">Total</th>
+                    <th class="w-25 text-center"></th>
                   </tr>
                 </thead>
                 <tbody>

@@ -11,15 +11,19 @@ function addProduto() {
   });    
 }
 
-function calcTotal(qtd, preco){
+function calcTotal(qtd, preco, cod){
     var reais = "R$ ";
     var resultado = Number(qtd) * Number(preco);
-    $("#total").text(reais + resultado);
+    $("#" + cod).text(reais + resultado);
 }
 
 function cadastrarPedido(){
   
-  var produtosJson = $('#tableProdutos').tableToJSON();
+  var produtosJson = $('#tableProdutos').tableToJSON({
+    textExtractor: function(cellIndex,$cell) {
+      return $cell.find('input, input').val() || $cell.text();
+    }
+  });
   var cnpj = $('#cnpj').val();
   var cliente = $("#cliente option:selected").val();
   var entrega = $('#entrega').val();
@@ -27,7 +31,7 @@ function cadastrarPedido(){
   $.ajax({
     type: "POST",
     url: "pedido-insert.php",
-    data: { cnpj: cnpj, cliente: cliente, entrega: entrega, produtos: produtosJson}
+    data: { cnpj: cnpj, cliente: cliente, entrega: entrega, produtos: produtosJson }
   }).done( function(response) {
     document.write(response);
   });
