@@ -122,7 +122,7 @@
           </div>
 
           <div class="col-md-4">
-            <a class="btn btn-primary" href="fornecedor-cadastro.php" role="button">+ Adicionar Fornecedor</a>            
+            <a class="btn btn-large btn-success" href="fornecedor-cadastro.php" role="button">+ Adicionar Fornecedor</a>            
           </div>
         </div>
 
@@ -134,7 +134,7 @@
                 <th>Nome Fornecedor</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
-                <th>Ingrediente</th>
+                <th>Cidade</th>
                 <th class="actions">Ações</th>
                 </tr>
               </thead>
@@ -147,7 +147,6 @@
                   <td><?=$row["email_fornecedor"]?></td>
                   <td><?=$row["cidade_fornecedor"]?></td>
                   <td class="actions">
-                  <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
 
                   <a class="btn btn-large btn-primary"
                   href="Editar-fornecedor.php?cod_fornecedor=<?=$row['cod_fornecedor']?>">Editar</a>
