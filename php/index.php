@@ -18,7 +18,7 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">GND Systems</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
+          <a class="nav-link" onclick="logout.php">Sair</a>
         </li>
       </ul>
     </nav>
