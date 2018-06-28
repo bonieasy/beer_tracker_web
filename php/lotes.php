@@ -109,7 +109,8 @@
         <?php  
           $PDO = db_connect(); 
 
-          $sql = "SELECT * FROM receita";
+          $sql = "SELECT * FROM lote l
+                    INNER JOIN produto p ON p.cod_produto = l.cod_produto;";
   
           $stmt = $PDO->prepare($sql);
           $stmt->execute();
@@ -119,11 +120,11 @@
 
         <div class="row">
           <div class="col-md-8">
-            <h2>Receitas</h2>
+            <h2>Lotes</h2>
           </div>
 
           <div class="col-md-4">
-            <a class="btn btn-large btn-success" href="cadastro-receita.php" role="button">+ Adicionar Receita</a>            
+            <a class="btn btn-large btn-success" href="cadastro-lote.php" role="button">+ Adicionar Lote</a>            
           </div>
         </div>
           <div class="table-responsive">
@@ -131,31 +132,23 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nome da receita</th>
-                  <th>OG</th>
-                  <th>FG</th>
-                  <th>IBU</th>
-                  <th>ABV</th>
-                  <th>Ações</th>
+                  <th>Produto</th>
+                  <th>Início</th>
+                  <th>Envase</th>
+                  <th>Fermentação</th>
+                  <th>Término</th>
                 </tr>
               </thead>
               <?php foreach($info as $row): ?>                     
                            
               <tbody>
                 <tr>
-                  <td><?=$row["cod_receita"]?></td>
-                  <td><?=$row["nome_receita"]?></td>
-                  <td><?=$row["indice_og"]?></td>
-                  <td><?=$row["indice_fg"]?></td>
-                  <td><?=$row["indice_ibu"]?></td>
-                  <td><?=$row["indice_abv"]?></td>
-                  <td class="actions">
-                    
-                    <a class="btn btn-large btn-primary"
-                      href="editar-receita.php?cod_receita=<?=$row['cod_receita']?>">Editar</a>
-
-                    <button class="btn btn-large btn-danger" onclick='deletar(<?=$row["cod_receita"]?>)'>Remover</button>
-                  </td>
+                  <td><?=$row["cod_lote"]?></td>
+                  <td><?=$row["nome_produto"]?></td>
+                  <td><?=$row["data_inicio"]?></td>
+                  <td><?=$row["data_envase"]?></td>
+                  <td><?=$row["data_fermentacao"]?></td>
+                  <td><?=$row["data_fim"]?></td>
                 </tr>                               
               </tbody>
                 <?php endforeach; ?>
