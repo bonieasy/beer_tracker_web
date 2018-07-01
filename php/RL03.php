@@ -19,15 +19,6 @@
     <!-- font icon -->
     <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
 
-    <script language="JavaScript" type="text/javascript">
-      function deletar(cod_receita) {
-        if (confirm('Confirma deleção desta receita?')) {
-          window.location.href = 'delete-cerveja.php?cod_receita=' + cod_receita;
-        }
-        return false;
-      }
-    </script>
-
   </head>
 
   <body>
@@ -109,7 +100,9 @@
         <?php  
           $PDO = db_connect(); 
 
-          $sql = "SELECT * FROM receita";
+          $sql = "SELECT * FROM cervejaria.fornecedor f
+          LEFT JOIN fornecedor_ingrediente fi ON fi.cod_fornecedor = f.cod_fornecedor
+          LEFT JOIN ingrediente i ON i.cod_ingrediente = fi.cod_ingrediente;";
   
           $stmt = $PDO->prepare($sql);
           $stmt->execute();
@@ -119,43 +112,40 @@
 
         <div class="row">
           <div class="col-md-8">
-            <h2>Receitas</h2>
+            <h2>Listagem Fornecedores</h2>
           </div>
 
           <div class="col-md-4">
-            <a class="btn btn-large btn-success" href="cadastro-receita.php" role="button">+ Adicionar Receita</a>            
+            <a class="btn btn-success" style="float: right" href="" role="button">Exportar</a>            
           </div>
+          
         </div>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nome da receita</th>
-                  <th>OG</th>
-                  <th>FG</th>
-                  <th>IBU</th>
-                  <th>ABV</th>
-                  <th>Ações</th>
+                  <th>Fornecedor</th>
+                  <th>Endereço</th>
+                  <th>Cidade</th>
+                  <th>Telefone</th>
+                  <th>E-mail</th>
+                  <th>Produto</th>
+                  <th>Descrição</th>
                 </tr>
               </thead>
               <?php foreach($info as $row): ?>                     
                            
               <tbody>
                 <tr>
-                  <td><?=$row["cod_receita"]?></td>
-                  <td><?=$row["nome_receita"]?></td>
-                  <td><?=$row["indice_og"]?></td>
-                  <td><?=$row["indice_fg"]?></td>
-                  <td><?=$row["indice_ibu"]?></td>
-                  <td><?=$row["indice_abv"]?></td>
-                  <td class="actions">
-                    
-                    <a class="btn btn-large btn-primary"
-                      href="editar-receita.php?cod_receita=<?=$row['cod_receita']?>">Editar</a>
-
-                    <button class="btn btn-large btn-danger" onclick='deletar(<?=$row["cod_receita"]?>)'>Remover</button>
-                  </td>
+                  <td><?=$row["cod_fornecedor"]?></td>
+                  <td><?=$row["razao_social_fornecedor"]?></td>
+                  <td><?=$row["endereco_fornecedor"]?></td>
+                  <td><?=$row["cidade_fornecedor"]?></td>
+                  <td><?=$row["telefone_fornecedor"]?></td>
+                  <td><?=$row["email_fornecedor"]?></td>
+                  <td><?=$row["nome_ingrediente"]?></td>
+                  <td><?=$row["descricao_ingrediente"]?></td>
                 </tr>                               
               </tbody>
                 <?php endforeach; ?>
